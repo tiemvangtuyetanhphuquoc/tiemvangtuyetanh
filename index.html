@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tiệm Vàng Tuyết Anh - Phú Quốc</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  color:#252525;
+  background:#fff;
+  line-height:1.7;
+}
+
+header{
+  height:70px;
+  background:#8f1118;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-family:Georgia,serif;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.menu-btn{
+  border:0;
+  background:transparent;
+  color:white;
+  font-size:32px;
+  cursor:pointer;
+}
+
+/* MENU TRƯỢT */
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:998;
+  display:none;
+}
+
+.overlay.show{
+  display:block;
+}
+
+.menu{
+  position:fixed;
+  top:0;
+  left:-100%;
+  width:85%;
+  max-width:430px;
+  height:100vh;
+  background:white;
+  z-index:999;
+  transition:.3s;
+  overflow-y:auto;
+}
+
+.menu.show{
+  left:0;
+}
+
+.menu-title{
+  height:85px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-bottom:1px solid #ddd;
+  position:relative;
+  color:#777;
+  font-size:20px;
+}
+
+.close{
+  position:absolute;
+  right:25px;
+  border:0;
+  background:transparent;
+  font-size:38px;
+  color:#8f1118;
+  cursor:pointer;
+}
+
+.menu-item{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:22px 25px;
+  border:0;
+  border-bottom:1px solid #ddd;
+  background:white;
+  color:#222;
+  font-size:21px;
+  text-decoration:none;
+  text-transform:uppercase;
+  text-align:left;
+  cursor:pointer;
+}
+
+.product-submenu{
+  display:none;
+  background:#faf8f4;
+}
+
+.product-submenu.show{
+  display:block;
+}
+
+.gold-category{
+  border-bottom:1px solid #ddd;
+  padding:16px 25px 16px 38px;
+}
+
+.gold-category h4{
+  color:#94131b;
+  font-size:18px;
+  margin-bottom:5px;
+}
+
+.gold-category p{
+  font-size:15px;
+  line-height:1.8;
+}
+
+/* TRANG */
+
+.page{
+  display:none;
+  min-height:calc(100vh - 70px);
+}
+
+.page.active{
+  display:block;
+}
+
+.hero{
+  min-height:620px;
+  background:linear-gradient(135deg,#6f0b10,#ae2028);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 20px;
+}
+
+.hero h1{
+  font-family:Georgia,serif;
+  font-size:46px;
+  line-height:1.25;
+  margin:15px 0;
+}
+
+.hero h2{
+  color:#efd493;
+  font-family:Georgia,serif;
+  font-weight:normal;
+}
+
+.hero .year{
+  letter-spacing:3px;
+  font-size:14px;
+}
+
+.hero p{
+  max-width:650px;
+  margin:25px auto;
+}
+
+.button{
+  display:inline-block;
+  border:1px solid #e3c374;
+  padding:12px 24px;
+  color:white;
+  text-decoration:none;
+  margin-top:10px;
+  cursor:pointer;
+}
+
+.content{
+  max-width:950px;
+  margin:auto;
+  padding:55px 20px 80px;
+}
+
+.title{
+  color:#8f1118;
+  font-family:Georgia,serif;
+  font-size:32px;
+  text-align:center;
+  line-height:1.3;
+}
+
+.line{
+  width:70px;
+  height:3px;
+  background:#c89b42;
+  margin:15px auto 35px;
+}
+
+.subtitle{
+  color:#8f1118;
+  font-family:Georgia,serif;
+  font-size:25px;
+  margin:40px 0 15px;
+}
+
+.content p{
+  margin-bottom:17px;
+}
+
+.quote{
+  background:#faf5ec;
+  border-left:4px solid #c89b42;
+  padding:25px;
+  margin:30px 0;
+  font-family:Georgia,serif;
+  font-size:21px;
+  color:#7d1117;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.product{
+  border:1px solid #e3d6c2;
+  padding:25px;
+  border-radius:8px;
+}
+
+.product h3{
+  color:#8f1118;
+  font-family:Georgia,serif;
+  margin-bottom:10px;
+  font-size:24px;
+}
+
+.service-list{
+  background:#faf5ec;
+  padding:25px;
+  margin:20px 0;
+  border-radius:8px;
+}
+
+.policy{
+  border-bottom:1px solid #ddd;
+  padding:28px 0;
+}
+
+.policy h2{
+  color:#8f1118;
+  font-family:Georgia,serif;
+  font-size:23px;
+  margin-bottom:15px;
+}
+
+.policy h3{
+  margin-top:18px;
+  font-size:17px;
+}
+
+.rate{
+  background:#faf5ec;
+  border-left:4px solid #c89b42;
+  padding:20px;
+  margin:20px 0;
+}
+
+.contact{
+  background:#8f1118;
+  color:white;
+  padding:25px;
+  border-radius:8px;
+  margin-top:30px;
+}
+
+.final-slogan{
+  color:#8f1118;
+  text-align:center;
+  font-family:Georgia,serif;
+  font-weight:bold;
+  font-size:21px;
+  margin-top:45px;
+}
+
+footer{
+  background:#280608;
+  color:white;
+  text-align:center;
+  padding:35px 20px;
+}
+
+@media(max-width:650px){
+  .products{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:35px;
+  }
+
+  .title{
+    font-size:27px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">TUYẾT ANH • PHÚ QUỐC</div>
+  <button class="menu-btn" onclick="openMenu()">☰</button>
+</header>
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<nav class="menu" id="menu">
+
+  <div class="menu-title">
+    Menu
+    <button class="close" onclick="closeMenu()">×</button>
+  </div>
+
+  <!-- 1 -->
+  <button class="menu-item" onclick="showPage('home')">
+    TRANG CHỦ
+  </button>
+
+  <!-- 2 -->
+  <button class="menu-item" onclick="showPage('about')">
+    GIỚI THIỆU
+  </button>
+
+  <!-- 3 -->
+  <button class="menu-item" onclick="toggleProducts()">
+    <span>SẢN PHẨM</span>
+    <span id="productPlus">＋</span>
+  </button>
+
+  <div class="product-submenu" id="productMenu">
+
+    <div class="gold-category">
+      <h4>VÀNG 24K</h4>
+      <p>
+        Nhẫn • Vòng • Kiềng • Lắc • Dây chuyền •
+        Mặt dây • Bông tai
+      </p>
+    </div>
+
+    <div class="gold-category">
+      <h4>VÀNG 750</h4>
+      <p>
+        Nhẫn • Vòng • Lắc • Dây chuyền •
+        Mặt dây • Bông tai
+      </p>
+    </div>
+
+    <div class="gold-category">
+      <h4>VÀNG 710</h4>
+      <p>
+        Nhẫn • Vòng • Lắc • Dây chuyền •
+        Mặt dây • Bông tai
+      </p>
+    </div>
+
+    <div class="gold-category">
+      <h4>VÀNG 610</h4>
+      <p>
+        Nhẫn • Vòng • Lắc • Dây chuyền •
+        Mặt dây • Bông tai • Ximen
+      </p>
+    </div>
+
+    <button class="menu-item" onclick="showPage('products')">
+      XEM TẤT CẢ SẢN PHẨM →
+    </button>
+
+  </div>
+
+  <!-- 4 -->
+  <button class="menu-item" onclick="showPage('pawn')">
+    DỊCH VỤ CẦM ĐỒ
+  </button>
+
+</nav>
+
+
+<!-- ================= TRANG CHỦ ================= -->
+
+<main class="page active" id="home">
+
+  <div class="hero">
+
+    <div>
+
+      <div class="year">THÀNH LẬP TỪ NĂM 2007</div>
+
+      <h1>
+        TIỆM VÀNG<br>
+        TUYẾT ANH
+      </h1>
+
+      <h2>PHÚ QUỐC</h2>
+
+      <p>
+        Trang sức không chỉ là tài sản mà còn là vật
+        lưu giữ những kỷ niệm vô giá.
+      </p>
+
+      <span class="button" onclick="showPage('about')">
+        Khám phá Tuyết Anh
+      </span>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+<!-- ================= GIỚI THIỆU ================= -->
+
+<main class="page" id="about">
+
+<div class="content">
+
+<h1 class="title">
+TIỆM VÀNG TUYẾT ANH – PHÚ QUỐC
+</h1>
+
+<div class="line"></div>
+
+<h2 class="subtitle">Hành trình từ năm 2007</h2>
+
+<p>
+Được thành lập từ năm 2007 tại Phú Quốc, Tiệm Vàng Tuyết Anh
+từng bước xây dựng và phát triển với mong muốn mang đến cho
+khách hàng những sản phẩm vàng và trang sức chất lượng,
+đa dạng về mẫu mã, rõ ràng về thông tin và minh bạch
+trong từng giao dịch.
+</p>
+
+<p>
+Tuyết Anh cung cấp đa dạng các dòng vàng 24K, vàng 750,
+vàng 710 và vàng 610, với nhiều lựa chọn như nhẫn, vòng,
+kiềng, lắc, dây chuyền, mặt dây, bông tai, ximen và nhiều
+mẫu trang sức phù hợp với từng nhu cầu khác nhau.
+</p>
+
+<p>
+Từ trang sức sử dụng hằng ngày, quà tặng dành cho người thân
+đến những sản phẩm dành cho các dịp quan trọng, Tuyết Anh
+luôn hướng đến việc mang lại sự an tâm và tin tưởng trong
+quá trình lựa chọn và mua sắm.
+</p>
+
+<h2 class="subtitle">GIÁ TRỊ CỦA TUYẾT ANH</h2>
+
+<p>
+Đối với Tuyết Anh, trang sức không chỉ là tài sản mà còn
+là vật lưu giữ những kỷ niệm vô giá.
+</p>
+
+<p>
+Một món trang sức có thể đánh dấu ngày cưới, một cột mốc
+quan trọng trong cuộc đời, một món quà dành cho người thân
+hay một kỷ vật được gìn giữ và trao lại qua nhiều thế hệ.
+</p>
+
+<p>
+Chính vì vậy, Tuyết Anh luôn chú trọng đến chất lượng sản phẩm,
+sự minh bạch trong mua bán và sự tận tâm trong phục vụ,
+với mong muốn mỗi sản phẩm đến tay khách hàng không chỉ
+mang giá trị vật chất mà còn chứa đựng một câu chuyện
+và ý nghĩa riêng.
+</p>
+
+<div class="quote">
+“Trang sức không chỉ là tài sản mà còn là vật lưu giữ
+những kỷ niệm vô giá.”
+</div>
+
+<h2 class="subtitle">SẢN PHẨM</h2>
+
+<p><strong>Vàng 24K</strong><br>
+Nhẫn • Vòng • Kiềng • Lắc • Dây chuyền • Mặt dây • Bông tai
+</p>
+
+<p><strong>Vàng 750</strong><br>
+Nhẫn • Vòng • Lắc • Dây chuyền • Mặt dây • Bông tai
+</p>
+
+<p><strong>Vàng 710</strong><br>
+Nhẫn • Vòng • Lắc • Dây chuyền • Mặt dây • Bông tai
+</p>
+
+<p><strong>Vàng 610</strong><br>
+Nhẫn • Vòng • Lắc • Dây chuyền • Mặt dây • Bông tai • Ximen
+</p>
+
+<p>
+Bên cạnh các sản phẩm có sẵn, Tuyết Anh còn tiếp nhận
+đặt mẫu và gia công trang sức theo yêu cầu, đáp ứng nhu cầu
+và sở thích riêng của từng khách hàng.
+</p>
+
+<h2 class="subtitle">DỊCH VỤ</h2>
+
+<p>
+Bên cạnh hoạt động mua – bán – đổi vàng và trang sức,
+Tiệm Vàng Tuyết Anh cung cấp nhiều dịch vụ liên quan
+đến trang sức như:
+</p>
+
+<div class="service-list">
+Sửa chữa • Gia công • Chỉnh size • Đánh bóng – làm mới •
+Vệ sinh trang sức • Gắn và siết đá • Khắc laser •
+Kiểm tra tuổi vàng
+</div>
+
+<p>
+Tiệm cũng cung cấp dịch vụ cầm đồ, hướng đến quy trình
+rõ ràng, thuận tiện và minh bạch cho khách hàng.
+</p>
+
+<h2 class="subtitle">CAM KẾT VỚI KHÁCH HÀNG</h2>
+
+<p>
+Từ năm 2007 đến nay, Tuyết Anh luôn xem uy tín và niềm tin
+của khách hàng là nền tảng cho sự phát triển lâu dài.
+</p>
+
+<p>
+Chúng tôi không ngừng hoàn thiện sản phẩm, dịch vụ và
+chất lượng phục vụ, hướng đến việc xây dựng Tiệm Vàng
+Tuyết Anh trở thành địa chỉ mua bán vàng và trang sức
+được khách hàng tin tưởng tại Phú Quốc.
+</p>
+
+<div class="final-slogan">
+TIỆM VÀNG TUYẾT ANH – PHÚ QUỐC
+<br><br>
+GÌN GIỮ GIÁ TRỊ – TRỌN VẸN NIỀM TIN
+</div>
+
+</div>
+</main>
+
+
+<!-- ================= SẢN PHẨM ================= -->
+
+<main class="page" id="products">
+
+<div class="content">
+
+<h1 class="title">SẢN PHẨM TUYẾT ANH</h1>
+<div class="line"></div>
+
+<div class="products">
+
+<div class="product">
+<h3>Vàng 24K</h3>
+<p>
+Nhẫn • Vòng • Kiềng • Lắc • Dây chuyền •
+Mặt dây • Bông tai
+</p>
+</div>
+
+<div class="product">
+<h3>Vàng 750</h3>
+<p>
+Nhẫn • Vòng • Lắc • Dây chuyền •
+Mặt dây • Bông tai
+</p>
+</div>
+
+<div class="product">
+<h3>Vàng 710</h3>
+<p>
+Nhẫn • Vòng • Lắc • Dây chuyền •
+Mặt dây • Bông tai
+</p>
+</div>
+
+<div class="product">
+<h3>Vàng 610</h3>
+<p>
+Nhẫn • Vòng • Lắc • Dây chuyền •
+Mặt dây • Bông tai • Ximen
+</p>
+</div>
+
+</div>
+
+<p style="margin-top:35px;">
+Bên cạnh các sản phẩm có sẵn, Tuyết Anh còn tiếp nhận
+đặt mẫu và gia công trang sức theo yêu cầu.
+</p>
+
+</div>
+</main>
+
+
+<!-- ================= CẦM ĐỒ ================= -->
+
+<main class="page" id="pawn">
+
+<div class="content">
+
+<h1 class="title">
+TIỆM VÀNG TUYẾT ANH – PHÚ QUỐC
+</h1>
+
+<div class="line"></div>
+
+<h2 style="text-align:center;margin-bottom:25px;">
+QUY ĐỊNH & CHÍNH SÁCH CẦM ĐỒ
+</h2>
+
+<p>
+Với mong muốn mang đến dịch vụ cầm đồ nhanh chóng,
+rõ ràng và minh bạch, Tiệm Vàng Tuyết Anh áp dụng quy trình
+tiếp nhận, bảo quản và hoàn trả tài sản theo các quy định dưới đây.
+</p>
+
+
+<div class="policy">
+
+<h2>1. ĐIỀU KIỆN & QUY TRÌNH TIẾP NHẬN</h2>
+
+<p>
+Khách hàng sử dụng dịch vụ cầm đồ phải từ đủ 18 tuổi và
+xuất trình CCCD hoặc giấy tờ tùy thân hợp lệ để xác minh thông tin.
+</p>
+
+<p><strong>Quy trình được thực hiện qua 4 bước:</strong></p>
+
+<h3>Bước 1 – Xác minh thông tin</h3>
+<p>
+Cửa hàng tiếp nhận và đối chiếu thông tin khách hàng
+trên giấy tờ tùy thân.
+</p>
+
+<h3>Bước 2 – Kiểm tra & định giá</h3>
+<p>
+Tài sản được kiểm tra đặc điểm, chất lượng và định giá
+bằng trang thiết bị chuyên dụng tại cửa hàng. Mức cầm được
+thông báo để khách hàng xem xét trước khi thực hiện giao dịch.
+</p>
+
+<h3>Bước 3 – Niêm phong & bảo quản</h3>
+<p>
+Sau khi hai bên thống nhất giao dịch, tài sản được đóng gói,
+niêm phong và đưa vào khu vực bảo quản an toàn của cửa hàng.
+</p>
+
+<h3>Bước 4 – Hoàn tất hợp đồng & giải ngân</h3>
+<p>
+Khách hàng kiểm tra thông tin, xác nhận các điều khoản,
+ký hợp đồng cầm đồ và nhận khoản tiền giải ngân theo thỏa thuận.
+</p>
+
+</div>
+
+
+<div class="policy">
+
+<h2>2. LÃI SUẤT & PHÍ BẢO QUẢN</h2>
+
+<div class="rate">
+<strong>Lãi suất cầm đồ: 1,5%/tháng.</strong>
+<br>
+<strong>Phí lưu kho và bảo quản tài sản: 0,3%/tháng.</strong>
+</div>
+
+<p>
+Các khoản lãi, phí, thời hạn thanh toán và số tiền liên quan
+đến giao dịch sẽ được thông báo và thể hiện trên hợp đồng
+để khách hàng kiểm tra trước khi xác nhận.
+</p>
+
+</div>
+
+
+<div class="policy">
+
+<h2>3. THANH TOÁN LÃI & DUY TRÌ HỢP ĐỒNG</h2>
+
+<p>
+Khách hàng thực hiện thanh toán lãi theo định kỳ
+01 tháng/lần trong thời gian hợp đồng còn hiệu lực.
+</p>
+
+<p>
+Quý khách có thể thanh toán trực tiếp tại
+Tiệm Vàng Tuyết Anh – Phú Quốc.
+</p>
+
+<p>
+Trong trường hợp không thuận tiện đến cửa hàng,
+quý khách có thể liên hệ:
+</p>
+
+<p>
+<strong>Điện thoại/Zalo:</strong>
+0933 338 661 – 0919 301 072
+</p>
+
+<p>
+<strong>Facebook:</strong>
+Tiệm Vàng Tuyết Anh – Phú Quốc
+</p>
+
+<p>
+Cửa hàng sẽ hướng dẫn hình thức thanh toán chuyển khoản
+phù hợp. Đối với những giao dịch cần kiểm tra, xác minh
+thông tin hoặc điều chỉnh nội dung hợp đồng, khách hàng
+được khuyến nghị thực hiện trực tiếp tại cửa hàng.
+</p>
+
+<p>
+Khách hàng cần chủ động thanh toán đúng kỳ hạn và không
+để quá 02 tháng liên tiếp không thanh toán lãi.
+</p>
+
+<p>
+Sau khi hợp đồng hết hạn, nếu khách hàng không thanh toán,
+không thực hiện gia hạn và không liên hệ với cửa hàng trong
+thời hạn xử lý được quy định tại hợp đồng, tài sản có thể
+được xử lý theo thỏa thuận giữa hai bên và quy định pháp luật
+hiện hành.
+</p>
+
+</div>
+
+
+<div class="policy">
+
+<h2>4. QUY TRÌNH CHUỘC & NHẬN LẠI TÀI SẢN</h2>
+
+<p>
+Khi có nhu cầu chuộc tài sản, khách hàng vui lòng xuất trình
+Hợp đồng cầm đồ bản chính cùng giấy tờ tùy thân theo yêu cầu
+để cửa hàng xác minh thông tin.
+</p>
+
+<p>
+Cửa hàng tiến hành đối chiếu thông tin khách hàng,
+thông tin hợp đồng, tình trạng khoản cầm và các nghĩa vụ
+thanh toán trước khi bàn giao tài sản.
+</p>
+
+<p>
+Trường hợp khách hàng không thể trực tiếp thực hiện giao dịch,
+người được ủy quyền hợp lệ có thể thay mặt khách hàng làm
+thủ tục khi đáp ứng đầy đủ yêu cầu xác minh của cửa hàng.
+</p>
+
+<p>
+Tài sản được bàn giao sau khi hoàn tất quá trình xác minh
+và các khoản thanh toán liên quan đến hợp đồng.
+</p>
+
+</div>
+
+
+<div class="policy">
+
+<h2>5. THỜI HẠN HỢP ĐỒNG & XỬ LÝ TÀI SẢN</h2>
+
+<p>
+Thời hạn tiêu chuẩn của một hợp đồng cầm đồ tại
+Tiệm Vàng Tuyết Anh là <strong>60 ngày</strong>,
+trừ trường hợp hai bên có thỏa thuận khác được thể hiện
+trên hợp đồng.
+</p>
+
+<p>
+Trong thời hạn này, khách hàng thực hiện thanh toán
+lãi 01 tháng/lần.
+</p>
+
+<p>
+Khi sắp đến hoặc đã đến ngày đáo hạn, khách hàng có nhu cầu
+tiếp tục duy trì khoản cầm vui lòng liên hệ cửa hàng để được
+hướng dẫn thực hiện thủ tục gia hạn.
+</p>
+
+<p>
+Trường hợp hợp đồng đã hết hạn nhưng khách hàng không thanh toán,
+không gia hạn và không liên hệ với cửa hàng, tài sản sẽ được xử lý
+theo thời hạn, điều kiện và phương thức đã được hai bên thống nhất
+trong hợp đồng cầm đồ và phù hợp với quy định pháp luật hiện hành.
+</p>
+
+</div>
+
+
+<div class="policy">
+
+<h2>6. XỬ LÝ KHI THẤT LẠC HỢP ĐỒNG</h2>
+
+<p>
+Trong trường hợp làm mất hoặc thất lạc Hợp đồng cầm đồ,
+khách hàng cần liên hệ với Tiệm Vàng Tuyết Anh ngay khi phát hiện
+để cửa hàng ghi nhận và hỗ trợ bảo vệ quyền lợi liên quan đến tài sản.
+</p>
+
+<p>
+Khách hàng cần trực tiếp đến cửa hàng, xuất trình CCCD/giấy tờ
+tùy thân hợp lệ và cung cấp các thông tin cần thiết để cửa hàng
+đối chiếu với hồ sơ giao dịch.
+</p>
+
+<p>
+Sau khi hoàn tất việc xác minh, cửa hàng sẽ lập Giấy xác nhận
+báo mất hợp đồng và hướng dẫn khách hàng thực hiện các thủ tục
+cần thiết tiếp theo.
+</p>
+
+<p>
+Kể từ thời điểm yêu cầu báo mất được cửa hàng xác nhận,
+hợp đồng bản chính đã khai báo thất lạc sẽ được ghi nhận
+trong hệ thống để hạn chế nguy cơ bị người khác sử dụng trái phép.
+</p>
+
+<p>
+Việc chuộc và nhận lại tài sản trong trường hợp mất hợp đồng
+chỉ được thực hiện sau khi cửa hàng xác minh đầy đủ thông tin,
+xác định đúng người có quyền nhận tài sản và khách hàng hoàn thành
+các nghĩa vụ liên quan.
+</p>
+
+</div>
+
+
+<div class="contact">
+
+<h2>LIÊN HỆ</h2>
+
+<p>
+Điện thoại/Zalo:<br>
+<strong>0933 338 661 – 0919 301 072</strong>
+</p>
+
+<p>
+Facebook:<br>
+<strong>Tiệm Vàng Tuyết Anh – Phú Quốc</strong>
+</p>
+
+</div>
+
+
+<div class="final-slogan">
+
+TIỆM VÀNG TUYẾT ANH – PHÚ QUỐC
+
+<br><br>
+
+GÌN GIỮ TÀI SẢN – MINH BẠCH GIAO DỊCH – TRỌN VẸN NIỀM TIN
+
+</div>
+
+</div>
+</main>
+
+
+<footer>
+<strong>TIỆM VÀNG TUYẾT ANH – PHÚ QUỐC</strong>
+<br>
+Thành lập từ năm 2007
+</footer>
+
+
+<script>
+
+function openMenu(){
+  document.getElementById("menu").classList.add("show");
+  document.getElementById("overlay").classList.add("show");
+}
+
+function closeMenu(){
+  document.getElementById("menu").classList.remove("show");
+  document.getElementById("overlay").classList.remove("show");
+}
+
+function toggleProducts(){
+
+  const menu =
+  document.getElementById("productMenu");
+
+  const plus =
+  document.getElementById("productPlus");
+
+  menu.classList.toggle("show");
+
+  if(menu.classList.contains("show")){
+    plus.innerHTML="−";
+  }else{
+    plus.innerHTML="＋";
+  }
+}
+
+function showPage(page){
+
+  const pages =
+  document.querySelectorAll(".page");
+
+  pages.forEach(function(item){
+    item.classList.remove("active");
+  });
+
+  document
+  .getElementById(page)
+  .classList.add("active");
+
+  closeMenu();
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+</script>
+
+</body>
+</html>
