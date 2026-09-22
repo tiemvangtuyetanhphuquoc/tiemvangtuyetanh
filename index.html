@@ -469,6 +469,93 @@ contact-buttons{
   cursor:pointer;
 
 }
+/* ===== SẢN PHẨM VÀNG 24K ===== */
+
+.product-gallery-24k{
+
+  display:grid;
+
+  grid-template-columns:repeat(2, 1fr);
+
+  gap:12px;
+
+  margin-top:25px;
+
+}
+
+.product-card-24k{
+
+  background:white;
+
+  border:1px solid #e4e4e4;
+
+  border-radius:10px;
+
+  overflow:hidden;
+
+}
+
+.product-card-24k img{
+
+  width:100%;
+
+  aspect-ratio:3/4;
+
+  object-fit:cover;
+
+  display:block;
+
+}
+
+.product-card-24k .product-name{
+
+  padding:10px 6px;
+
+  text-align:center;
+
+  color:#8f1118;
+
+  font-family:Georgia,serif;
+
+  font-size:15px;
+
+  font-weight:bold;
+
+}
+
+.no-products-24k{
+
+  display:none;
+
+  text-align:center;
+
+  padding:45px 10px;
+
+  color:#777;
+
+  font-size:17px;
+
+}
+
+.filter-options button.active-filter{
+
+  background:#8f1118;
+
+  border-color:#8f1118;
+
+  color:white;
+
+}
+
+@media(min-width:800px){
+
+  .product-gallery-24k{
+
+    grid-template-columns:repeat(3, 1fr);
+
+  }
+
+} 
 @media(max-width:650px){
   .products{
     grid-template-columns:1fr;
@@ -794,35 +881,44 @@ Bên cạnh các sản phẩm có sẵn, Tuyết Anh còn tiếp nhận
 
     <h1 class="title">VÀNG 24K</h1>
     <div class="line"></div>
-  <div class="filter-box">
 
-  <button class="filter-toggle" onclick="toggleFilter('filter24k')">
+    <!-- BỘ LỌC -->
 
-    Bộ lọc ☷
+    <div class="filter-box">
 
-  </button>
+      <button class="filter-toggle"
+              onclick="toggleFilter('filter24k')">
+        Bộ lọc ☷
+      </button>
 
-  <div class="filter-options" id="filter24k">
+      <div class="filter-options" id="filter24k">
 
-    <button>TẤT CẢ</button>
+        <button onclick="filter24K('all', this)">TẤT CẢ</button>
 
-    <button>NHẪN</button>
+        <button onclick="filter24K('nhan', this)">NHẪN</button>
 
-    <button>VÒNG</button>
+        <button onclick="filter24K('vong', this)">VÒNG</button>
 
-    <button>KIỀNG</button>
+        <button onclick="filter24K('kieng', this)">KIỀNG</button>
 
-    <button>LẮC</button>
+        <button onclick="filter24K('lac', this)">LẮC</button>
 
-    <button>DÂY CHUYỀN</button>
+        <button onclick="filter24K('daychuyen', this)">
+          DÂY CHUYỀN
+        </button>
 
-    <button>MẶT DÂY</button>
+        <button onclick="filter24K('matday', this)">
+          MẶT DÂY
+        </button>
 
-    <button>BÔNG TAI</button>
+        <button onclick="filter24K('bongtai', this)">
+          BÔNG TAI
+        </button>
 
-  </div>
+      </div>
 
-</div> 
+    </div>
+
     <h2 class="subtitle">SẢN PHẨM VÀNG 24K</h2>
 
     <p>
@@ -830,9 +926,86 @@ Bên cạnh các sản phẩm có sẵn, Tuyết Anh còn tiếp nhận
       Mặt dây • Bông tai
     </p>
 
+
+    <!-- ===== 11 SẢN PHẨM ===== -->
+
+    <div class="product-gallery-24k" id="gallery24k">
+
+
+      <!-- ===== LẮC ===== -->
+
+      <div class="product-card-24k" data-category="lac">
+        <img src="IMG_0201.jpeg" alt="Lắc vàng 24K">
+        <div class="product-name">Lắc vàng 24K</div>
+      </div>
+
+      <div class="product-card-24k" data-category="lac">
+        <img src="IMG_0202.jpeg" alt="Lắc vàng 24K">
+        <div class="product-name">Lắc vàng 24K</div>
+      </div>
+
+      <div class="product-card-24k" data-category="lac">
+        <img src="IMG_0203.jpeg" alt="Lắc vàng 24K">
+        <div class="product-name">Lắc vàng 24K</div>
+      </div>
+
+      <div class="product-card-24k" data-category="lac">
+        <img src="IMG_0204.jpeg" alt="Lắc vàng 24K">
+        <div class="product-name">Lắc vàng 24K</div>
+      </div>
+
+
+      <!-- ===== KIỀNG ===== -->
+
+      <div class="product-card-24k" data-category="kieng">
+        <img src="IMG_0205.jpeg" alt="Kiềng vàng 24K">
+        <div class="product-name">Kiềng vàng 24K</div>
+      </div>
+
+      <div class="product-card-24k" data-category="kieng">
+        <img src="IMG_0206.jpeg" alt="Kiềng vàng 24K">
+        <div class="product-name">Kiềng vàng 24K</div>
+      </div>
+
+
+      <!-- ===== VÒNG ===== -->
+
+      <div class="product-card-24k" data-category="vong">
+        <img src="IMG_0207.jpeg" alt="Vòng vàng 24K">
+        <div class="product-name">Vòng vàng 24K</div>
+      </div>
+
+      <div class="product-card-24k" data-category="vong">
+        <img src="IMG_0208.jpeg" alt="Vòng vàng 24K">
+        <div class="product-name">Vòng vàng 24K</div>
+      </div>
+
+      <div class="product-card-24k" data-category="vong">
+        <img src="IMG_0209.jpeg" alt="Vòng vàng 24K">
+        <div class="product-name">Vòng vàng 24K</div>
+      </div>
+
+      <div class="product-card-24k" data-category="vong">
+        <img src="IMG_0210.jpeg" alt="Vòng vàng 24K">
+        <div class="product-name">Vòng vàng 24K</div>
+      </div>
+
+      <div class="product-card-24k" data-category="vong">
+        <img src="IMG_0211.jpeg" alt="Vòng vàng 24K">
+        <div class="product-name">Vòng vàng 24K</div>
+      </div>
+
+    </div>
+
+
+    <!-- Khi loại sản phẩm chưa có ảnh -->
+
+    <div class="no-products-24k" id="noProducts24k">
+      Sản phẩm đang được cập nhật.
+    </div>
+
   </div>
 </main>
-
 
 <!-- ================= VÀNG 750 ================= -->
 
@@ -1317,6 +1490,50 @@ function toggleFilter(id){
   const filter = document.getElementById(id);
   filter.classList.toggle("show");
 }
+function filter24K(category, button){
+
+  const products =
+    document.querySelectorAll("#gallery24k .product-card-24k");
+
+  const buttons =
+    document.querySelectorAll("#filter24k button");
+
+  const noProducts =
+    document.getElementById("noProducts24k");
+
+  let found = false;
+
+  buttons.forEach(function(btn){
+    btn.classList.remove("active-filter");
+  });
+
+  button.classList.add("active-filter");
+
+  products.forEach(function(product){
+
+    const productCategory =
+      product.getAttribute("data-category");
+
+    if(category === "all" || productCategory === category){
+
+      product.style.display = "block";
+      found = true;
+
+    }else{
+
+      product.style.display = "none";
+
+    }
+
+  });
+
+  if(found){
+    noProducts.style.display = "none";
+  }else{
+    noProducts.style.display = "block";
+  }
+
+} 
 </script>
 
 </body>
