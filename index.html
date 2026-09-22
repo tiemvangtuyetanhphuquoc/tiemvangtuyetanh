@@ -1123,26 +1123,45 @@ Bên cạnh các sản phẩm có sẵn, Tuyết Anh còn tiếp nhận
 
     <h1 class="title">VÀNG 610</h1>
     <div class="line"></div>
-<div class="filter-box">
 
-  <button class="filter-toggle" onclick="toggleFilter('filter610')">
-    Bộ lọc ☷
-  </button>
+    <!-- BỘ LỌC -->
 
-  <div class="filter-options" id="filter610">
+    <div class="filter-box">
 
-    <button>TẤT CẢ</button>
-    <button>NHẪN</button>
-    <button>VÒNG</button>
-    <button>LẮC</button>
-    <button>DÂY CHUYỀN</button>
-    <button>MẶT DÂY</button>
-    <button>BÔNG TAI</button>
-    <button>XIMEN</button>
+      <button class="filter-toggle"
+              onclick="toggleFilter('filter610')">
+        Bộ lọc ☷
+      </button>
 
-  </div>
+      <div class="filter-options" id="filter610">
 
-</div>   
+        <button onclick="filter610('all', this)">TẤT CẢ</button>
+
+        <button onclick="filter610('nhan', this)">NHẪN</button>
+
+        <button onclick="filter610('vong', this)">VÒNG</button>
+
+        <button onclick="filter610('lac', this)">LẮC</button>
+
+        <button onclick="filter610('daychuyen', this)">
+          DÂY CHUYỀN
+        </button>
+
+        <button onclick="filter610('matday', this)">
+          MẶT DÂY
+        </button>
+
+        <button onclick="filter610('bongtai', this)">
+          BÔNG TAI
+        </button>
+
+        <button onclick="filter610('ximen', this)">
+          XIMEN
+        </button>
+
+      </div>
+
+    </div>
 
     <h2 class="subtitle">SẢN PHẨM VÀNG 610</h2>
 
@@ -1150,6 +1169,74 @@ Bên cạnh các sản phẩm có sẵn, Tuyết Anh còn tiếp nhận
       Nhẫn • Vòng • Lắc • Dây chuyền •
       Mặt dây • Bông tai • Ximen
     </p>
+
+
+    <!-- ===== 10 SẢN PHẨM ===== -->
+
+    <div class="product-gallery-24k" id="gallery610">
+
+
+      <!-- ===== NHẪN ===== -->
+
+      <div class="product-card-24k" data-category="nhan">
+        <img src="IMG_0363.jpeg" alt="Nhẫn vàng 610">
+        <div class="product-name">Nhẫn vàng 610</div>
+      </div>
+
+      <div class="product-card-24k" data-category="nhan">
+        <img src="IMG_0364.jpeg" alt="Nhẫn vàng 610">
+        <div class="product-name">Nhẫn vàng 610</div>
+      </div>
+
+      <div class="product-card-24k" data-category="nhan">
+        <img src="IMG_0365.jpeg" alt="Nhẫn vàng 610">
+        <div class="product-name">Nhẫn vàng 610</div>
+      </div>
+
+      <div class="product-card-24k" data-category="nhan">
+        <img src="IMG_0366.jpeg" alt="Nhẫn vàng 610">
+        <div class="product-name">Nhẫn vàng 610</div>
+      </div>
+
+      <div class="product-card-24k" data-category="nhan">
+        <img src="IMG_0367.jpeg" alt="Nhẫn vàng 610">
+        <div class="product-name">Nhẫn vàng 610</div>
+      </div>
+
+      <div class="product-card-24k" data-category="nhan">
+        <img src="IMG_0368.jpeg" alt="Nhẫn vàng 610">
+        <div class="product-name">Nhẫn vàng 610</div>
+      </div>
+
+      <div class="product-card-24k" data-category="nhan">
+        <img src="IMG_0369.jpeg" alt="Nhẫn vàng 610">
+        <div class="product-name">Nhẫn vàng 610</div>
+      </div>
+
+      <div class="product-card-24k" data-category="nhan">
+        <img src="IMG_0370.jpeg" alt="Nhẫn vàng 610">
+        <div class="product-name">Nhẫn vàng 610</div>
+      </div>
+
+      <div class="product-card-24k" data-category="nhan">
+        <img src="IMG_0371.jpeg" alt="Nhẫn vàng 610">
+        <div class="product-name">Nhẫn vàng 610</div>
+      </div>
+
+      <div class="product-card-24k" data-category="nhan">
+        <img src="IMG_0372.jpeg" alt="Nhẫn vàng 610">
+        <div class="product-name">Nhẫn vàng 610</div>
+      </div>
+
+
+    </div>
+
+
+    <!-- Khi loại sản phẩm chưa có ảnh -->
+
+    <div class="no-products-24k" id="noProducts610">
+      Sản phẩm đang được cập nhật.
+    </div>
 
   </div>
 </main>
@@ -1564,6 +1651,50 @@ function filter24K(category, button){
   }
 
 } 
+ function filter610(category, button){
+
+  const products =
+    document.querySelectorAll("#gallery610 .product-card-24k");
+
+  const buttons =
+    document.querySelectorAll("#filter610 button");
+
+  const noProducts =
+    document.getElementById("noProducts610");
+
+  let found = false;
+
+  buttons.forEach(function(btn){
+    btn.classList.remove("active-filter");
+  });
+
+  button.classList.add("active-filter");
+
+  products.forEach(function(product){
+
+    const productCategory =
+      product.getAttribute("data-category");
+
+    if(category === "all" || productCategory === category){
+
+      product.style.display = "block";
+      found = true;
+
+    }else{
+
+      product.style.display = "none";
+
+    }
+
+  });
+
+  if(found){
+    noProducts.style.display = "none";
+  }else{
+    noProducts.style.display = "block";
+  }
+
+}
 </script>
 
 </body>
