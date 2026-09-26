@@ -791,6 +791,126 @@ contact-buttons{
   background:white;
 
 }
+ /* ===== TRANG GIÁ VÀNG ===== */
+
+.gold-price-shop{
+  text-align:center;
+  color:#8f1118;
+  font-family:Georgia,serif;
+  font-size:23px;
+  margin-bottom:10px;
+}
+
+.gold-price-intro{
+  text-align:center;
+  color:#555;
+  max-width:650px;
+  margin:0 auto 40px !important;
+}
+
+
+/* CÁC LOẠI VÀNG */
+
+.gold-price-types{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:12px;
+  margin:20px 0 45px;
+}
+
+.gold-price-types div{
+  padding:18px 10px;
+  text-align:center;
+  background:#faf5ec;
+  border:1px solid #c89b42;
+  border-radius:8px;
+  color:#8f1118;
+  font-family:Georgia,serif;
+  font-size:18px;
+}
+
+
+/* KHUNG ZALO */
+
+.gold-price-zalo{
+  text-align:center;
+  background:#faf5ec;
+  border-top:4px solid #8f1118;
+  border-radius:10px;
+  padding:30px 22px;
+  margin:20px 0 35px;
+}
+
+.gold-price-zalo h2{
+  color:#8f1118;
+  font-family:Georgia,serif;
+  font-size:23px;
+  margin-bottom:18px;
+}
+
+.gold-price-zalo p{
+  max-width:700px;
+  margin:0 auto 15px;
+}
+
+
+/* NÚT ZALO */
+
+.gold-price-zalo-btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:15px 24px;
+  background:#8f1118;
+  color:white;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:bold;
+  font-size:15px;
+  transition:.2s;
+}
+
+.gold-price-zalo-btn:hover{
+  opacity:.9;
+}
+
+
+/* LƯU Ý */
+
+.gold-price-note{
+  background:#fff;
+  border-left:4px solid #c89b42;
+  padding:22px;
+  margin:35px 0;
+}
+
+.gold-price-note h2{
+  color:#8f1118;
+  font-family:Georgia,serif;
+  font-size:21px;
+  margin-bottom:12px;
+}
+
+
+/* ĐIỆN THOẠI */
+
+@media(max-width:650px){
+
+  .gold-price-types{
+    grid-template-columns:repeat(2, 1fr);
+  }
+
+  .gold-price-zalo{
+    padding:25px 16px;
+  }
+
+  .gold-price-zalo-btn{
+    display:block;
+    width:100%;
+    padding:14px 10px;
+    font-size:14px;
+  }
+
+}   
 </style>
 </head>
 
@@ -814,13 +934,15 @@ contact-buttons{
   <button class="menu-item" onclick="showPage('home')">
     TRANG CHỦ
   </button>
-
   <!-- 2 -->
   <button class="menu-item" onclick="showPage('about')">
     GIỚI THIỆU
   </button>
-
   <!-- 3 -->
+<button class="menu-item" onclick="showPage('goldPrice')">
+  GIÁ VÀNG
+</button>
+  <!-- 4 -->
   <button class="menu-item" onclick="toggleProducts()">
     <span>SẢN PHẨM</span>
     <span id="productPlus">＋</span>
@@ -866,11 +988,11 @@ contact-buttons{
 
   </div>
 
-  <!-- 4 -->
+  <!-- 5 -->
   <button class="menu-item" onclick="showPage('pawn')">
     DỊCH VỤ CẦM ĐỒ
   </button>
-<!-- 5 -->
+<!-- 6 -->
 
 <button class="menu-item" onclick="showPage('contactPage')">
 
@@ -1101,7 +1223,110 @@ GÌN GIỮ GIÁ TRỊ – TRỌN VẸN NIỀM TIN
 
 </div>
 </main>
+<!-- ================= GIÁ VÀNG ================= -->
 
+<main class="page" id="goldPrice">
+
+  <div class="content">
+
+    <h1 class="title">
+      GIÁ VÀNG HÔM NAY
+    </h1>
+
+    <div class="line"></div>
+
+    <h2 class="gold-price-shop">
+      TIỆM VÀNG TUYẾT ANH – PHÚ QUỐC
+    </h2>
+
+    <p class="gold-price-intro">
+      Cập nhật thông tin giá vàng mua vào – bán ra tại cửa hàng
+      thông qua Nhóm Zalo mỗi ngày.
+    </p>
+
+
+    <!-- CÁC LOẠI VÀNG -->
+
+    <h2 class="subtitle">
+      CÁC LOẠI VÀNG ĐANG KINH DOANH
+    </h2>
+
+    <div class="gold-price-types">
+
+      <div><strong>VÀNG 997</strong></div>
+
+      <div><strong>VÀNG 980</strong></div>
+
+      <div><strong>VÀNG 710</strong></div>
+
+      <div><strong>VÀNG 610</strong></div>
+
+    </div>
+
+
+    <!-- THEO DÕI GIÁ QUA ZALO -->
+
+    <div class="gold-price-zalo">
+
+      <h2>
+        THEO DÕI GIÁ VÀNG MỖI NGÀY
+      </h2>
+
+      <p>
+        Giá vàng tại cửa hàng được cập nhật thường xuyên
+        theo tình hình thị trường.
+      </p>
+
+      <p>
+        Quý khách vui lòng tham gia
+        <strong>Nhóm Zalo Tiệm Vàng Tuyết Anh – Phú Quốc</strong>
+        để theo dõi giá mua vào – bán ra mới nhất trong ngày.
+      </p>
+
+      <a href="https://zalo.me/g/ersmci687"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="gold-price-zalo-btn">
+        THAM GIA NHÓM ZALO – XEM GIÁ HÔM NAY
+      </a>
+
+    </div>
+
+
+    <!-- LƯU Ý -->
+
+    <div class="gold-price-note">
+
+      <h2>LƯU Ý VỀ GIÁ VÀNG</h2>
+
+      <p>
+        Giá vàng có thể thay đổi nhiều lần trong ngày tùy theo
+        biến động của thị trường. Bảng giá được cập nhật trên
+        Nhóm Zalo nhằm giúp quý khách thuận tiện theo dõi.
+      </p>
+
+      <p>
+        Giá giao dịch thực tế được xác nhận tại thời điểm
+        mua – bán tại
+        <strong>Tiệm Vàng Tuyết Anh – Phú Quốc.</strong>
+      </p>
+
+    </div>
+
+
+    <div class="final-slogan">
+
+      TIỆM VÀNG TUYẾT ANH – PHÚ QUỐC
+
+      <br><br>
+
+      GÌN GIỮ GIÁ TRỊ – TRỌN VẸN NIỀM TIN
+
+    </div>
+
+  </div>
+
+</main>
 
 <!-- ================= SẢN PHẨM ================= -->
 
