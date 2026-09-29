@@ -1538,11 +1538,45 @@ GÌN GIỮ GIÁ TRỊ – TRỌN VẸN NIỀM TIN
 
   </div>
 
-</main>
-
-<!-- ================= SẢN PHẨM ================= -->
+  <!-- ================= TẤT CẢ SẢN PHẨM ================= -->
 
 <main class="page" id="products">
+
+  <div class="content">
+
+    <h1 class="title">TẤT CẢ SẢN PHẨM</h1>
+
+    <div class="line"></div>
+
+    <p style="text-align:center; margin-bottom:25px;">
+      Khám phá các sản phẩm vàng 24K và vàng 610
+      hiện đang được trưng bày tại Tiệm Vàng Tuyết Anh – Phú Quốc.
+    </p>
+
+    <div class="all-product-filter">
+
+      <button class="active-all-filter"
+              onclick="filterAllProducts('all', this)">
+        TẤT CẢ
+      </button>
+
+      <button onclick="filterAllProducts('24k', this)">
+        VÀNG 24K
+      </button>
+
+      <button onclick="filterAllProducts('610', this)">
+        VÀNG 610
+      </button>
+
+    </div>
+
+    <div class="product-gallery-24k"
+         id="allProductsGallery">
+    </div>
+
+  </div>
+
+</main>
 
 <div class="content">
 
@@ -3388,6 +3422,93 @@ homeSlider.addEventListener("touchend", function(){
 });
 
 startHomeSlider();
+  /* ===== GOM TẤT CẢ SẢN PHẨM 24K + 610 ===== */
+
+function loadAllProducts(){
+
+  const allGallery =
+    document.getElementById("allProductsGallery");
+
+  if(!allGallery){
+    return;
+  }
+
+  allGallery.innerHTML = "";
+
+  const products24k =
+    document.querySelectorAll("#gallery24k .product-card-24k");
+
+  const products610 =
+    document.querySelectorAll("#gallery610 .product-card-24k");
+
+  products24k.forEach(function(product){
+
+    const clone = product.cloneNode(true);
+
+    clone.setAttribute("data-gold-type", "24k");
+
+    clone.style.display = "block";
+
+    allGallery.appendChild(clone);
+
+  });
+
+  products610.forEach(function(product){
+
+    const clone = product.cloneNode(true);
+
+    clone.setAttribute("data-gold-type", "610");
+
+    clone.style.display = "block";
+
+    allGallery.appendChild(clone);
+
+  });
+
+}
+
+
+function filterAllProducts(type, button){
+
+  const products =
+    document.querySelectorAll(
+      "#allProductsGallery .product-card-24k"
+    );
+
+  const buttons =
+    document.querySelectorAll(
+      ".all-product-filter button"
+    );
+
+  buttons.forEach(function(btn){
+    btn.classList.remove("active-all-filter");
+  });
+
+  button.classList.add("active-all-filter");
+
+  products.forEach(function(product){
+
+    const goldType =
+      product.getAttribute("data-gold-type");
+
+    if(type === "all" || goldType === type){
+
+      product.style.display = "block";
+
+    }else{
+
+      product.style.display = "none";
+
+    }
+
+  });
+
+}
+
+
+/* TỰ ĐỘNG TẢI SẢN PHẨM */
+
+loadAllProducts();
 </script>
 
 </body>
