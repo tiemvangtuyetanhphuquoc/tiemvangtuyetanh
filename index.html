@@ -4,7 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="/favicon.png">
-<title>Tiệm Vàng Tuyết Anh - Phú Quốc</title>
+<title>Tiệm Vàng Tuyết Anh Phú Quốc | Vàng 24K, 750, 710, 610</title>
+
+<meta name="description"
+content="Tiệm Vàng Tuyết Anh Phú Quốc – thành lập từ năm 2007. Chuyên vàng 24K, 750, 710, 610, mua bán đổi vàng, sửa chữa trang sức và dịch vụ cầm vàng.">
+<link rel="canonical"
+href="https://tiemvangtuyetanhphuquoc.com/">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Tiệm Vàng Tuyết Anh – Phú Quốc">
 <meta property="og:description" content="Gìn giữ giá trị – Trọn vẹn niềm tin. Thành lập từ năm 2007 tại Phú Quốc.">
@@ -268,37 +273,190 @@ header{
 
 }
 
-.hero h1{
-  font-family:Georgia,serif;
-  font-size:46px;
-  line-height:1.25;
-  margin:15px 0;
-}
+/* ===== HERO TRANG CHỦ ===== */
 
-.hero h2{
-  color:#efd493;
-  font-family:Georgia,serif;
-  font-weight:normal;
+.hero{
+  max-width:950px;
+  margin:auto;
+  padding:48px 20px 35px;
+  text-align:center;
 }
 
 .hero .year{
+  color:#8f1118;
   letter-spacing:3px;
-  font-size:14px;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.hero h1{
+  font-family:Georgia,serif;
+  font-size:43px;
+  line-height:1.18;
+  color:#252525;
+  margin:0;
+}
+
+.hero h2{
+  color:#c89b42;
+  font-family:Georgia,serif;
+  font-size:26px;
+  font-weight:normal;
+  margin:10px 0 18px;
 }
 
 .hero p{
   max-width:650px;
-  margin:25px auto;
+  margin:0 auto 25px;
+  color:#555;
+  font-size:16px;
+  line-height:1.8;
 }
 
-.button{
-  display:inline-block;
-  border:1px solid #e3c374;
-  padding:12px 24px;
-  color:white;
+.hero-actions{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.hero-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:12px 22px;
+  border-radius:6px;
   text-decoration:none;
-  margin-top:10px;
+  font-size:14px;
+  font-weight:bold;
   cursor:pointer;
+  transition:.2s;
+}
+
+.hero-btn-primary{
+  background:#8f1118;
+  color:white;
+  border:1px solid #8f1118;
+}
+
+.hero-btn-secondary{
+  background:white;
+  color:#8f1118;
+  border:1px solid #c89b42;
+}
+
+.hero-btn:active{
+  transform:scale(.98);
+}
+    /* ===== THÔNG TIN NỔI BẬT ===== */
+
+.home-highlights{
+  max-width:950px;
+  margin:10px auto 25px;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+
+.home-highlight{
+  background:#faf5ec;
+  border:1px solid #ead8b0;
+  border-radius:10px;
+  padding:18px 10px;
+  text-align:center;
+}
+
+.home-highlight-icon{
+  font-size:24px;
+  margin-bottom:7px;
+}
+
+.home-highlight strong{
+  display:block;
+  color:#8f1118;
+  font-family:Georgia,serif;
+  font-size:15px;
+  margin-bottom:4px;
+}
+
+.home-highlight span{
+  color:#666;
+  font-size:12px;
+  line-height:1.5;
+}
+
+
+/* ===== GIÁ VÀNG TRANG CHỦ ===== */
+
+.home-gold-price{
+  max-width:910px;
+  margin:35px auto 10px;
+  padding:28px 20px;
+  background:#8f1118;
+  color:white;
+  border-radius:12px;
+  text-align:center;
+}
+
+.home-gold-price h2{
+  font-family:Georgia,serif;
+  font-size:24px;
+  margin-bottom:8px;
+}
+
+.home-gold-price p{
+  margin-bottom:16px;
+  color:#f6e8d0;
+}
+
+.home-gold-price button{
+  border:1px solid #efd493;
+  background:#fff;
+  color:#8f1118;
+  padding:12px 22px;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+
+/* MOBILE */
+
+@media(max-width:650px){
+
+  .hero{
+    padding:35px 18px 25px;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .hero h2{
+    font-size:22px;
+  }
+
+  .hero-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hero-btn{
+    padding:11px 8px;
+    font-size:13px;
+  }
+
+  .home-highlights{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .home-gold-price{
+    margin:25px 20px 5px;
+  }
+
 }
 
 .content{
@@ -416,7 +574,7 @@ footer{
   text-align:center;
   padding:35px 20px;
 }
-contact-buttons{
+.contact-buttons{
 
   display:flex;
 
@@ -1042,31 +1200,81 @@ contact-buttons{
   </div>
 
 </div>
+<section class="hero">
 
-  <div class="hero">
-    <div>
+  <div class="year">
+    THÀNH LẬP TỪ NĂM 2007
+  </div>
 
-      <div class="year">THÀNH LẬP TỪ NĂM 2007</div>
+  <h1>
+    TIỆM VÀNG TUYẾT ANH
+  </h1>
 
-      <h1>
-        TIỆM VÀNG<br>
-        TUYẾT ANH
-      </h1>
+  <h2>PHÚ QUỐC</h2>
 
-      <h2>PHÚ QUỐC</h2>
+  <p>
+    Gìn giữ giá trị – Trọn vẹn niềm tin.
+    Đa dạng các dòng vàng 24K, 750, 710 và 610
+    cùng nhiều sản phẩm và dịch vụ trang sức tại Phú Quốc.
+  </p>
 
-      <p>
-        Trang sức không chỉ là tài sản mà còn là vật
-        lưu giữ những kỷ niệm vô giá.
-      </p>
+  <div class="hero-actions">
 
-      <span class="button" onclick="showPage('about')">
-        Khám phá Tuyết Anh
-      </span>
+    <span class="hero-btn hero-btn-primary"
+          onclick="showPage('products')">
+      XEM SẢN PHẨM
+    </span>
 
-    </div>
+    <span class="hero-btn hero-btn-secondary"
+          onclick="showPage('goldPrice')">
+      GIÁ VÀNG HÔM NAY
+    </span>
 
   </div>
+
+</section>
+  <section class="home-highlights">
+
+  <div class="home-highlight">
+    <div class="home-highlight-icon">◆</div>
+    <strong>TỪ NĂM 2007</strong>
+    <span>Phục vụ khách hàng tại Phú Quốc</span>
+  </div>
+
+  <div class="home-highlight">
+    <div class="home-highlight-icon">✦</div>
+    <strong>ĐA DẠNG SẢN PHẨM</strong>
+    <span>24K • 750 • 710 • 610</span>
+  </div>
+
+  <div class="home-highlight">
+    <div class="home-highlight-icon">♢</div>
+    <strong>DỊCH VỤ TRANG SỨC</strong>
+    <span>Sửa chữa • làm mới • gia công</span>
+  </div>
+
+  <div class="home-highlight">
+    <div class="home-highlight-icon">✓</div>
+    <strong>MINH BẠCH</strong>
+    <span>Thông tin rõ ràng trong giao dịch</span>
+  </div>
+
+</section>
+  <section class="home-gold-price">
+
+  <h2>GIÁ VÀNG HÔM NAY</h2>
+
+  <p>
+    Theo dõi thông tin giá vàng mới nhất tại
+    Tiệm Vàng Tuyết Anh – Phú Quốc.
+  </p>
+
+  <button onclick="showPage('goldPrice')">
+    XEM GIÁ VÀNG →
+  </button>
+
+</section>
+  
  <!-- ===== BỘ SƯU TẬP TRANG CHỦ ===== -->
 
 <div class="home-collection">
@@ -1078,13 +1286,13 @@ contact-buttons{
   <div class="collection-grid">
 
     <div class="collection-item">
-      <img src="IMG_0627.jpeg" alt="Bộ trang sức Tuyết Anh">
-      <div class="collection-name">Bộ trang sức Tuyết Anh</div>
+      <img src="IMG_0627.jpeg" alt="Bộ trang sức Tuyết Anh Phú Quốc">
+      <div class="collection-name">Bộ trang sức nổi bật Tuyết Anh</div>
     </div>
 
     <div class="collection-item">
-      <img src="IMG_0628.jpeg" alt="Bộ trang sức Tuyết Anh">
-      <div class="collection-name">Bộ trang sức Tuyết Anh</div>
+      <img src="IMG_0628.jpeg" alt="Bộ trang sức Tuyết Anh Phú Quốc">
+      <div class="collection-name">Bộ trang sức nổi bật Tuyết Anh</div>
     </div>
 
   </div>
