@@ -1072,7 +1072,50 @@ footer{
     font-size:14px;
   }
 
-}   
+}  
+/* TẤT CẢ SẢN PHẨM */
+
+.all-product-filter{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+
+  margin:20px 0 30px;
+
+}
+
+.all-product-filter button{
+
+  border:1px solid #c89b42;
+
+  background:white;
+
+  color:#8f1118;
+
+  padding:10px 18px;
+
+  border-radius:25px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+}
+
+.all-product-filter button.active-all-filter{
+
+  background:#8f1118;
+
+  color:white;
+
+  border-color:#8f1118;
+
+}    
 </style>
 </head>
 
@@ -1537,6 +1580,7 @@ GÌN GIỮ GIÁ TRỊ – TRỌN VẸN NIỀM TIN
     </div>
 
   </div>
+</main>
 
   <!-- ================= TẤT CẢ SẢN PHẨM ================= -->
 
@@ -1578,54 +1622,7 @@ GÌN GIỮ GIÁ TRỊ – TRỌN VẸN NIỀM TIN
 
 </main>
 
-<div class="content">
 
-<h1 class="title">SẢN PHẨM TUYẾT ANH</h1>
-<div class="line"></div>
-
-<div class="products">
-
-<div class="product">
-<h3>Vàng 24K</h3>
-<p>
-Nhẫn • Vòng • Kiềng • Lắc • Dây chuyền •
-Mặt dây • Bông tai
-</p>
-</div>
-
-<div class="product">
-<h3>Vàng 750</h3>
-<p>
-Nhẫn • Vòng • Lắc • Dây chuyền •
-Mặt dây • Bông tai • Kiềng • Ximen
-</p>
-</div>
-
-<div class="product">
-<h3>Vàng 710</h3>
-<p>
-Nhẫn • Vòng • Lắc • Dây chuyền •
-Mặt dây • Bông tai • Kiềng • Ximen
-</p> 
-</div>
-
-<div class="product">
-<h3>Vàng 610</h3>
-<p>
-Nhẫn • Vòng • Lắc • Dây chuyền •
-Mặt dây • Bông tai • Ximen • Kiềng
-</p>
-</div>
-
-</div>
-
-<p style="margin-top:35px;">
-Bên cạnh các sản phẩm có sẵn, Tuyết Anh còn tiếp nhận
-đặt mẫu và gia công trang sức theo yêu cầu.
-</p>
-
-</div>
-</main>
 <!-- ================= VÀNG 24K ================= -->
 
 <main class="page" id="gold24k">
@@ -3213,6 +3210,9 @@ function showPage(page){
   document
   .getElementById(page)
   .classList.add("active");
+  if(page === "products"){
+  loadAllProducts();
+}
 
   closeMenu();
 
