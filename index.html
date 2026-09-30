@@ -1116,6 +1116,132 @@ footer{
   border-color:#8f1118;
 
 }    
+    /* ===== HÀNH TRÌNH TUYẾT ANH ===== */
+
+.brand-journey{
+  max-width:950px;
+  margin:15px auto 55px;
+  padding:45px 20px 20px;
+}
+
+.brand-journey-head{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.brand-journey-head span{
+  display:block;
+  color:#c89b42;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:3px;
+  margin-bottom:7px;
+}
+
+.brand-journey-head h2{
+  color:#8f1118;
+  font-family:Georgia,serif;
+  font-size:29px;
+  margin-bottom:10px;
+}
+
+.brand-journey-head p{
+  color:#666;
+  max-width:650px;
+  margin:auto;
+  line-height:1.7;
+}
+
+.journey-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.journey-card{
+  background:#fff;
+  border:1px solid #ead8b0;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(0,0,0,.07);
+}
+
+.journey-image{
+  position:relative;
+  overflow:hidden;
+  background:#f5f1e9;
+}
+
+.journey-image img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  display:block;
+}
+
+.journey-year{
+  position:absolute;
+  left:14px;
+  bottom:14px;
+  background:rgba(143,17,24,.94);
+  color:white;
+  border:1px solid #d7b363;
+  padding:7px 15px;
+  border-radius:30px;
+  font-family:Georgia,serif;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.journey-info{
+  padding:19px 17px 22px;
+  text-align:center;
+}
+
+.journey-info h3{
+  color:#8f1118;
+  font-family:Georgia,serif;
+  font-size:20px;
+  margin-bottom:7px;
+}
+
+.journey-info p{
+  color:#666;
+  font-size:14px;
+  line-height:1.7;
+  margin:0;
+}
+
+.journey-bottom{
+  text-align:center;
+  margin-top:30px;
+  color:#8f1118;
+  font-family:Georgia,serif;
+  font-size:17px;
+  font-weight:bold;
+}
+
+@media(max-width:650px){
+
+  .brand-journey{
+    padding:35px 20px 10px;
+  }
+
+  .brand-journey-head h2{
+    font-size:27px;
+  }
+
+  .journey-grid{
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+
+  .journey-image img{
+    height:auto;
+    aspect-ratio:4/3;
+  }
+
+}
 </style>
   <script type="application/ld+json">
 
@@ -1374,7 +1500,96 @@ footer{
     </div>
 
   </div>
+<!-- ===== HÀNH TRÌNH TUYẾT ANH ===== -->
 
+<section class="brand-journey">
+
+  <div class="brand-journey-head">
+
+    <span>GÌN GIỮ GIÁ TRỊ QUA THỜI GIAN</span>
+
+    <h2>HÀNH TRÌNH TỪ NĂM 2007</h2>
+
+    <p>
+      Từ những ngày đầu tại Phú Quốc đến Tiệm Vàng Tuyết Anh hôm nay,
+      mỗi giai đoạn là một phần trong hành trình xây dựng niềm tin
+      và phục vụ khách hàng.
+    </p>
+
+  </div>
+
+
+  <div class="journey-grid">
+
+    <article class="journey-card">
+
+      <div class="journey-image">
+        <img src="IMG_1745.jpeg"
+             alt="Tiệm Vàng Tuyết Anh Phú Quốc năm 2007"
+             loading="lazy">
+
+        <div class="journey-year">2007</div>
+      </div>
+
+      <div class="journey-info">
+        <h3>Những ngày đầu</h3>
+        <p>
+          Khởi đầu hành trình của Tiệm Vàng Tuyết Anh tại Phú Quốc.
+        </p>
+      </div>
+
+    </article>
+
+
+    <article class="journey-card">
+
+      <div class="journey-image">
+        <img src="IMG_1747.jpeg"
+             alt="Tiệm Vàng Tuyết Anh Phú Quốc năm 2016"
+             loading="lazy">
+
+        <div class="journey-year">2016</div>
+      </div>
+
+      <div class="journey-info">
+        <h3>Từng bước phát triển</h3>
+        <p>
+          Tuyết Anh tiếp tục hoàn thiện cửa hàng và đồng hành
+          cùng khách hàng qua từng năm.
+        </p>
+      </div>
+
+    </article>
+
+
+    <article class="journey-card">
+
+      <div class="journey-image">
+        <img src="IMG_1748.jpeg"
+             alt="Tiệm Vàng Tuyết Anh Phú Quốc năm 2026"
+             loading="lazy">
+
+        <div class="journey-year">2026</div>
+      </div>
+
+      <div class="journey-info">
+        <h3>Tuyết Anh hôm nay</h3>
+        <p>
+          Tiếp nối những giá trị đã được xây dựng từ năm 2007
+          và hướng đến chặng đường phát triển tiếp theo.
+        </p>
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <div class="journey-bottom">
+    GÌN GIỮ GIÁ TRỊ • TRỌN VẸN NIỀM TIN
+  </div>
+
+</section>
 </div>
 </main>
 
