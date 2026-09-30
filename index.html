@@ -3899,7 +3899,24 @@ function filterAllProducts(type, button){
 /* TỰ ĐỘNG TẢI SẢN PHẨM */
 
 loadAllProducts();
-</script>
+/* ===== TỰ ĐỘNG LAZY LOAD ẢNH ===== */
 
+document.querySelectorAll("img").forEach(function(img){
+
+  const src = img.getAttribute("src");
+
+  if(
+    src === "24276F00-8C51-406D-9020-F0F73C1150EB.png" ||
+    src === "IMG_0064.jpeg"
+  ){
+    return;
+  }
+
+  img.setAttribute("loading", "lazy");
+  img.setAttribute("decoding", "async");
+
+});
+
+</script>
 </body>
 </html>
