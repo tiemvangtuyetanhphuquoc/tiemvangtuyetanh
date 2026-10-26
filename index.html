@@ -1369,6 +1369,118 @@ footer{
 
 }
     
+/* BO SUU TAP HOANG GIA */
+
+.home-collection {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 50px 18px 65px;
+}
+
+.collection-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.collection-eyebrow {
+  display: block;
+  color: #b38b47;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.home-collection .collection-heading h2 {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  color: #78131b;
+  margin-bottom: 14px;
+}
+
+.collection-line {
+  width: 65px;
+  height: 2px;
+  background: #c9a35d;
+  margin: 0 auto 18px;
+}
+
+.home-collection .collection-heading p {
+  color: #73665b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.home-collection .collection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.home-collection .collection-item {
+  overflow: hidden;
+  border: 1px solid #d8bc84;
+  border-radius: 14px;
+  background: #fffaf2;
+  box-shadow: 0 7px 20px rgba(80, 30, 20, .08);
+}
+
+.home-collection .collection-featured {
+  grid-column: 1 / -1;
+}
+
+.home-collection .collection-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.home-collection .collection-featured img {
+  aspect-ratio: 5 / 4;
+}
+
+.home-collection .collection-name {
+  padding: 15px 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #fffaf2;
+}
+
+.home-collection .collection-name strong {
+  color: #78131b;
+  font-family: Georgia, serif;
+  font-size: 16px;
+}
+
+.home-collection .collection-name small {
+  color: #817368;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.home-collection .collection-featured .collection-name strong {
+  font-size: 23px;
+}
+
+@media (min-width: 768px) {
+  .home-collection .collection-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .home-collection .collection-featured {
+    grid-column: 1 / -1;
+  }
+
+  .home-collection .collection-featured img {
+    aspect-ratio: 16 / 7;
+  }
+}
+
 
 </style>
   <script type="application/ld+json">
@@ -1751,38 +1863,59 @@ footer{
   
  <!-- ===== BỘ SƯU TẬP TRANG CHỦ ===== -->
 
+<!-- BO SUU TAP HOANG GIA -->
 <div class="home-collection">
 
-  <h2>BỘ SƯU TẬP</h2>
-
-  <p>Khám phá những mẫu trang sức nổi bật tại Tuyết Anh</p>
+  <div class="collection-heading">
+    <span class="collection-eyebrow">TUYẾT ANH • PHÚ QUỐC</span>
+    <h2>BỘ SƯU TẬP</h2>
+    <div class="collection-line"></div>
+    <p>Tinh hoa trang sức vàng<br>Vẻ đẹp lưu giữ cùng thời gian</p>
+  </div>
 
   <div class="collection-grid">
 
-    <div class="collection-item">
-      <img src="IMG_0627.jpeg" alt="Bộ trang sức Tuyết Anh Phú Quốc">
-      <div class="collection-name">Bộ trang sức nổi bật Tuyết Anh</div>
+    <div class="collection-item collection-featured">
+      <img src="IMG_0627.jpeg" alt="Trang sức vàng Tuyết Anh">
+      <div class="collection-name">
+        <strong>Sắc Đỏ Quý Phái</strong>
+        <small>Vẻ đẹp sang trọng và cuốn hút</small>
+      </div>
     </div>
-     <div class="collection-item">
-      <img src="copy_033C8E4D-FABC-463F-AD7A-4CB07AA4DFAB.jpeg" alt="Bộ trang sức Tuyết Anh Phú Quốc">
-      <div class="collection-name">Bộ trang sức nổi bật Tuyết Anh</div>
-    </div>
-     <div class="collection-item">
-      <img src="copy_EE15D53B-1AE2-46C7-AAD6-76CCB1644C99.jpeg" alt="Bộ trang sức Tuyết Anh Phú Quốc">
-      <div class="collection-name">Bộ trang sức nổi bật Tuyết Anh</div>
-    </div>
- <div class="collection-item">
-      <img src="IMG_0628.jpeg" alt="Bộ trang sức Tuyết Anh Phú Quốc">
-      <div class="collection-name">Bộ trang sức nổi bật Tuyết Anh</div>
-    </div>
-      
-<div class="collection-item">
-      <img src=" A9C6CFB8-3161-4E3E-8112-B5959A7BF0CE.png" alt="Bộ trang sức Tuyết Anh Phú Quốc">
-      <div class="collection-name">Bộ trang sức nổi bật Tuyết Anh</div>
-    </div>
-  </div>
 
+    <div class="collection-item">
+      <img src="copy_033C8E4D-FABC-463F-AD7A-4CB07AA4DFAB.jpeg" alt="Trang sức vàng Tuyết Anh">
+      <div class="collection-name">
+        <strong>Nét Vàng Thanh Lịch</strong>
+      </div>
+    </div>
+
+    <div class="collection-item">
+      <img src="copy_EE15D53B-1AE2-46C7-AAD6-76CCB1644C99.jpeg" alt="Trang sức vàng Tuyết Anh">
+      <div class="collection-name">
+        <strong>Dấu Ấn Truyền Thống</strong>
+      </div>
+    </div>
+
+    <div class="collection-item">
+      <img src="IMG_0628.jpeg" alt="Trang sức vàng Tuyết Anh">
+      <div class="collection-name">
+        <strong>Ánh Kim Rực Rỡ</strong>
+      </div>
+    </div>
+
+    <div class="collection-item">
+      <img src="A9C6CFB8-3161-4E3E-8112-B5959A7BF0CE.png" alt="Trang sức vàng Tuyết Anh">
+      <div class="collection-name">
+        <strong>Sắc Xanh Ngọc Quý</strong>
+      </div>
+    </div>
+
+  </div>
 </div>
+<!-- KET THUC BO SUU TAP -->
+
+
 </main>
 
 
