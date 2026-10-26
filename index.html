@@ -1741,20 +1741,76 @@ footer{
 </section>
 <!-- KET THUC 4 O DICH VU -->
 
-  <section class="home-gold-price">
+ <!-- ===== TRUNG TAM CAP NHAT GIA VANG ===== -->
+<section class="ta-price-center">
 
-  <h2>GIÁ VÀNG HÔM NAY</h2>
+  <div class="ta-price-top">
+    <span class="ta-price-label">
+      TUYẾT ANH • PHÚ QUỐC
+    </span>
 
-  <p>
-    Theo dõi thông tin giá vàng mới nhất tại
-    Tiệm Vàng Tuyết Anh – Phú Quốc.
-  </p>
+    <h2>GIÁ VÀNG HÔM NAY</h2>
 
-  <button onclick="showPage('goldPrice')">
-    XEM GIÁ VÀNG →
+    <div class="ta-price-line"></div>
+
+    <p>
+      Theo dõi thông tin giá vàng tại
+      Tiệm Vàng Tuyết Anh – Phú Quốc.
+    </p>
+  </div>
+
+  <div class="ta-price-list">
+
+    <a href="https://zalo.me/g/ersmci687"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span>◆ &nbsp; Vàng 997</span>
+      <small>Xem trên Zalo ↗</small>
+    </a>
+
+    <a href="https://zalo.me/g/ersmci687"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span>◆ &nbsp; Vàng 980</span>
+      <small>Xem trên Zalo ↗</small>
+    </a>
+
+    <a href="https://zalo.me/g/ersmci687"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span>◆ &nbsp; Vàng 710</span>
+      <small>Xem trên Zalo ↗</small>
+    </a>
+
+    <a href="https://zalo.me/g/ersmci687"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span>◆ &nbsp; Vàng 610</span>
+      <small>Xem trên Zalo ↗</small>
+    </a>
+
+  </div>
+
+  <a class="ta-price-zalo"
+     href="https://zalo.me/g/ersmci687"
+     target="_blank"
+     rel="noopener noreferrer">
+    THAM KHẢO GIÁ VÀNG TRÊN ZALO ↗
+  </a>
+
+  <button class="ta-price-page"
+          onclick="showPage('goldPrice')">
+    XEM TRANG GIÁ VÀNG CỦA TIỆM →
   </button>
 
+  <p class="ta-price-note">
+    Giá vàng chỉ mang tính tham khảo.
+    Vui lòng liên hệ cửa hàng để xác nhận
+    giá giao dịch tại thời điểm mua – bán.
+  </p>
+
 </section>
+<!-- ===== KET THUC TRUNG TAM GIA VANG ===== -->
   <!-- ===== HÀNH TRÌNH TUYẾT ANH ===== -->
 
 <section class="brand-journey">
@@ -4593,7 +4649,156 @@ footer.royal-footer {
     font-size: 32px;
   }
 }
+/* ===== TRUNG TAM GIA VANG HOANG GIA ===== */
 
+.ta-price-center {
+  max-width: 950px;
+  margin: 35px auto 45px;
+  padding: 28px 20px;
+  background: #fffdf8;
+  border: 1px solid #d8bf8b;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(75,20,25,.09);
+  text-align: left;
+}
+
+.ta-price-top {
+  text-align: center;
+  padding-bottom: 24px;
+}
+
+.ta-price-label {
+  display: block;
+  color: #b08a4c;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  margin-bottom: 12px;
+}
+
+.ta-price-top h2 {
+  color: #78131b;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  margin: 0 0 12px;
+}
+
+.ta-price-line {
+  width: 65px;
+  height: 2px;
+  background: #c9a35d;
+  margin: 0 auto 15px;
+}
+
+.ta-price-top p {
+  color: #746b62;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.ta-price-list {
+  border: 1px solid #e6d8bd;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.ta-price-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 15px;
+  text-decoration: none;
+  border-bottom: 1px solid #eee5d8;
+  transition: background .2s;
+}
+
+.ta-price-list a:last-child {
+  border-bottom: none;
+}
+
+.ta-price-list a:hover {
+  background: #faf1e3;
+}
+
+.ta-price-list span {
+  color: #78131b;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.ta-price-list small {
+  color: #8b7656;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.ta-price-zalo {
+  display: block;
+  margin-top: 22px;
+  padding: 17px 12px;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    #610a16,
+    #901b2b
+  );
+  border: 1px solid #c9a35d;
+  color: #fff4da;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: .3px;
+  box-shadow: 0 7px 18px rgba(90,10,25,.17);
+}
+
+.ta-price-page {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 13px 10px;
+  border: 1px solid #c9a35d;
+  border-radius: 12px;
+  background: #fffaf1;
+  color: #78131b;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.ta-price-note {
+  margin: 18px 0 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #84786b;
+}
+
+@media (max-width: 650px) {
+  .ta-price-center {
+    margin: 28px 16px 38px;
+    padding: 23px 15px;
+  }
+
+  .ta-price-top h2 {
+    font-size: 25px;
+  }
+
+  .ta-price-list a {
+    padding: 19px 12px;
+  }
+
+  .ta-price-list span {
+    font-size: 15px;
+  }
+
+  .ta-price-list small {
+    font-size: 11px;
+  }
+}
 </style>
 <!-- KET THUC GIAO DIEN HOANG GIA - PHAN 1 -->
 
