@@ -536,6 +536,45 @@ body.menu-locked {
     box-sizing: border-box !important;
   }
 }
+  
+/* DONG BO MENU SAN PHAM VOI TRANG CHU */
+
+@media (max-width: 767px) {
+  .side-menu .product-submenu {
+    background: #faf9f6;
+  }
+
+  .side-menu .product-submenu > a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    padding: 18px 30px !important;
+    min-height: 100px;
+    border-bottom: 1px solid #dedbd5;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+
+  .side-menu .product-submenu > a strong {
+    display: block;
+    color: #780d1b;
+    font-family: Arial, sans-serif;
+    font-size: 17px !important;
+    font-weight: 700;
+  }
+
+  .side-menu .product-submenu > a span {
+    display: block;
+    color: #555;
+    font-family: Arial, sans-serif;
+    font-size: 14px !important;
+    font-weight: 400;
+    line-height: 1.7;
+  }
+}
+
 </style>
 </head>
 
@@ -608,26 +647,27 @@ body.menu-locked {
   </button>
 
   <div class="product-submenu" id="productMenu">
+  <a href="/#gold24k">
+    <strong>VÀNG 24K</strong>
+    <span>Nhẫn • Vòng • Kiềng • Lắc • Dây chuyền • Mặt dây • Bông tai</span>
+  </a>
 
-    <a class="gold-category" href="/#gold24k">
-      <strong>VÀNG 24K</strong>
-      <span>Nhẫn • Vòng • Kiềng • Lắc • Dây chuyền</span>
-    </a>
+  <a href="/#gold750">
+    <strong>VÀNG 750</strong>
+    <span>Nhẫn • Vòng • Lắc • Dây chuyền • Mặt dây • Bông tai • Kiềng • Ximen</span>
+  </a>
 
-    <a class="gold-category" href="/#gold750">
-      <strong>VÀNG 750</strong>
-      <span>Danh mục sản phẩm</span>
-    </a>
+  <a href="/#gold710">
+    <strong>VÀNG 710</strong>
+    <span>Nhẫn • Vòng • Lắc • Dây chuyền • Mặt dây • Bông tai • Kiềng • Ximen</span>
+  </a>
 
-    <a class="gold-category" href="/#gold710">
-      <strong>VÀNG 710</strong>
-      <span>Nhẫn • Vòng • Lắc • Dây chuyền</span>
-    </a>
+  <a href="/#gold610">
+    <strong>VÀNG 610</strong>
+    <span>Nhẫn • Vòng • Lắc • Dây chuyền • Mặt dây • Bông tai • Ximen • Kiềng</span>
+  </a>
+</div>
 
-    <a class="gold-category" href="/#gold610">
-      <strong>VÀNG 610</strong>
-      <span>Nhẫn • Vòng • Lắc • Bông tai</span>
-    </a>
 
     <a class="menu-item" href="/#products">
       XEM TẤT CẢ SẢN PHẨM →
