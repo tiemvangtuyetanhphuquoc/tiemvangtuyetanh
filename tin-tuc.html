@@ -1,1 +1,1014 @@
 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tin tức & Sự kiện | Tiệm Vàng Tuyết Anh Phú Quốc</title>
+<meta name="description" content="Tin tức, sự kiện và hoạt động mới nhất của Tiệm Vàng Tuyết Anh – Phú Quốc, thành lập từ năm 2007.">
+<link rel="icon" href="/favicon2.png">
+<link rel="canonical" href="https://tiemvangtuyetanhphuquoc.com/tin-tuc.html">
+
+<style>
+:root {
+  --red:#780d1b;
+  --dark:#3e0610;
+  --gold:#c9a35d;
+  --cream:#fffaf0;
+  --text:#493a35;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#fffdf8;
+  color:var(--text);
+  line-height:1.65;
+}
+
+button,a {
+  -webkit-tap-highlight-color:transparent;
+}
+
+button {
+  cursor:pointer;
+  font-family:inherit;
+}
+
+a {
+  color:inherit;
+}
+
+/* THANH DAU TRANG */
+
+.site-header {
+  position:sticky;
+  top:0;
+  z-index:100;
+  min-height:70px;
+  padding:12px 20px;
+  background:linear-gradient(125deg,#690817,#8f111e);
+  border-bottom:3px solid var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.site-brand {
+  font-family:Georgia,serif;
+  color:#fff1d0;
+  font-size:clamp(17px,4.5vw,27px);
+  font-weight:bold;
+  text-decoration:none;
+  letter-spacing:.3px;
+}
+
+.menu-button {
+  border:0;
+  background:transparent;
+  color:#e9c67f;
+  font-size:33px;
+  padding:4px 9px;
+  line-height:1;
+}
+
+/* MENU TRUOT BEN TRAI */
+
+.menu-overlay {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+  z-index:998;
+  display:none;
+}
+
+.menu-overlay.show {
+  display:block;
+}
+
+.side-menu {
+  position:fixed;
+  top:0;
+  left:0;
+  width:85%;
+  max-width:430px;
+  height:100dvh;
+  background:white;
+  z-index:999;
+  overflow-y:auto;
+  transform:translateX(-105%);
+  transition:transform .3s ease;
+  box-shadow:5px 0 25px rgba(0,0,0,.15);
+}
+
+.side-menu.show {
+  transform:translateX(0);
+}
+
+.menu-heading {
+  height:85px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  border-bottom:1px solid #ddd;
+  color:#777;
+  font-size:20px;
+}
+
+.menu-close {
+  position:absolute;
+  right:22px;
+  top:15px;
+  border:0;
+  background:transparent;
+  color:var(--red);
+  font-size:39px;
+}
+
+.menu-item {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
+  padding:20px 23px;
+  border:0;
+  border-bottom:1px solid #e5e5e5;
+  background:white;
+  color:#222;
+  text-align:left;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:400;
+  line-height:1.4;
+}
+
+.menu-item:active {
+  background:#faf2e9;
+}
+
+.product-submenu {
+  display:none;
+  background:#faf8f4;
+}
+
+.product-submenu.show {
+  display:block;
+}
+
+.gold-category {
+  display:block;
+  padding:15px 22px 15px 36px;
+  border-bottom:1px solid #e5ded2;
+  text-decoration:none;
+}
+
+.gold-category strong {
+  display:block;
+  color:var(--red);
+  font-size:17px;
+}
+
+.gold-category span {
+  display:block;
+  font-size:13px;
+  color:#777;
+  margin-top:4px;
+}
+
+body.menu-locked {
+  overflow:hidden;
+}
+
+/* BANNER TIN TUC */
+
+.news-hero {
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  background:linear-gradient(135deg,#430510,#860f21);
+}
+
+.news-hero img {
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.hero-fallback {
+  display:none;
+  min-height:260px;
+  padding:65px 18px;
+  text-align:center;
+  color:#f5d58c;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-fallback strong {
+  display:block;
+  font-family:Georgia,serif;
+  font-size:clamp(29px,7vw,52px);
+  line-height:1.3;
+}
+
+.hero-fallback p {
+  color:#fff0d7;
+  margin:14px 0 0;
+}
+
+/* TIN TUC */
+
+.news-section {
+  max-width:1050px;
+  min-height:300px;
+  margin:auto;
+  padding:55px 18px 65px;
+}
+
+.section-eyebrow {
+  color:#ae8948;
+  text-align:center;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:4px;
+}
+
+.section-title {
+  margin:12px auto;
+  color:var(--red);
+  font-family:Georgia,serif;
+  text-align:center;
+  font-size:clamp(27px,6vw,42px);
+  line-height:1.25;
+}
+
+.gold-line {
+  width:95px;
+  height:2px;
+  background:var(--gold);
+  margin:25px auto 35px;
+}
+
+.news-empty {
+  text-align:center;
+  color:#777;
+  font-size:15px;
+  padding:30px 15px;
+}
+
+.news-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+
+.news-card {
+  overflow:hidden;
+  background:white;
+  border:1px solid #e5d5b8;
+  border-radius:13px;
+  box-shadow:0 7px 20px rgba(65,10,10,.06);
+  cursor:pointer;
+}
+
+.news-card.featured {
+  grid-column:1/-1;
+}
+
+.news-card img {
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+
+.news-card.featured img {
+  aspect-ratio:16/9;
+}
+
+.news-card-content {
+  padding:18px;
+}
+
+.news-card time {
+  color:#aa8649;
+  font-size:12px;
+}
+
+.news-card h3 {
+  margin:8px 0;
+  font-family:Georgia,serif;
+  color:var(--red);
+  font-size:19px;
+  line-height:1.4;
+}
+
+.news-card.featured h3 {
+  font-size:25px;
+}
+
+.news-card p {
+  font-size:14px;
+  color:#666;
+  margin:0 0 12px;
+}
+
+.read-more {
+  color:var(--red);
+  font-weight:bold;
+  font-size:13px;
+}
+
+.article-detail {
+  display:none;
+  max-width:850px;
+  margin:0 auto;
+  padding:40px 20px 65px;
+}
+
+.article-detail h1 {
+  color:var(--red);
+  font-family:Georgia,serif;
+  line-height:1.3;
+}
+
+.article-detail img {
+  max-width:100%;
+  height:auto;
+  border-radius:10px;
+}
+
+.back-button {
+  padding:12px 20px;
+  border:1px solid var(--gold);
+  border-radius:25px;
+  background:white;
+  color:var(--red);
+  font-weight:bold;
+}
+
+.article-body {
+  margin-top:25px;
+  white-space:pre-line;
+  line-height:1.9;
+}
+
+/* BON O LIEN HE */
+
+.contact-section {
+  background:var(--cream);
+  padding:55px 18px 70px;
+  border-top:1px solid #eee0c5;
+}
+
+.contact-inner {
+  max-width:950px;
+  margin:auto;
+}
+
+.contact-description {
+  color:#777;
+  text-align:center;
+  margin:20px auto 35px;
+  font-size:15px;
+}
+
+.contact-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.contact-card {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  min-height:155px;
+  padding:18px 8px;
+  border:1.5px solid var(--gold);
+  border-radius:17px;
+  background:#fffaf0;
+  color:var(--red);
+  text-decoration:none;
+  font-size:clamp(14px,3.5vw,20px);
+  font-weight:bold;
+  text-align:center;
+  box-shadow:0 5px 16px rgba(60,20,10,.04);
+}
+
+.contact-card:active {
+  background:#f6eddd;
+}
+
+.contact-icon {
+  width:61px;
+  height:61px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:var(--red);
+  border:3px solid var(--gold);
+  border-radius:50%;
+  color:#f8db9c;
+  font-size:28px;
+  font-weight:bold;
+}
+
+/* CHAN TRANG DO DO */
+
+.site-footer {
+  padding:65px 20px 30px;
+  background:linear-gradient(135deg,#440611,#780c1d);
+  color:#f8e9d2;
+  border-top:4px solid var(--gold);
+  text-align:center;
+}
+
+.footer-symbol {
+  color:#e4bc68;
+  font-size:46px;
+  margin-bottom:22px;
+}
+
+.footer-name {
+  font-family:Georgia,serif;
+  font-size:clamp(26px,6vw,40px);
+  line-height:1.3;
+  color:#f5dfb0;
+  margin:0;
+}
+
+.footer-location {
+  color:#d7b66e;
+  font-weight:bold;
+  letter-spacing:6px;
+  margin-top:10px;
+  font-size:17px;
+}
+
+.footer-divider {
+  width:95px;
+  height:1px;
+  background:var(--gold);
+  margin:35px auto;
+}
+
+.footer-slogan {
+  font-family:Georgia,serif;
+  font-size:clamp(18px,4vw,24px);
+  font-style:italic;
+  margin-bottom:30px;
+}
+
+.footer-year {
+  color:#d7b66e;
+  letter-spacing:3px;
+  font-weight:bold;
+  margin-bottom:30px;
+}
+
+.footer-info {
+  font-size:14px;
+  line-height:2;
+  color:#f0dfd8;
+}
+
+.footer-bottom {
+  border-top:1px solid rgba(201,163,93,.35);
+  margin-top:40px;
+  padding-top:24px;
+  color:#cbb5ac;
+  font-size:13px;
+}
+
+/* MAY TINH */
+
+@media(min-width:768px) {
+  .contact-grid {
+    gap:20px;
+  }
+
+  .contact-card {
+    min-height:190px;
+  }
+
+  .news-grid {
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .news-card.featured {
+    grid-column:1/-1;
+  }
+}
+
+@media(max-width:380px) {
+  .menu-item {
+    font-size:16px;
+  }
+
+  .contact-card {
+    min-height:145px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- DAU TRANG -->
+
+<header class="site-header">
+  <a class="site-brand" href="/">
+    TUYẾT ANH • PHÚ QUỐC
+  </a>
+
+  <button
+    class="menu-button"
+    type="button"
+    aria-label="Mở menu"
+    aria-controls="sideMenu"
+    aria-expanded="false"
+    id="menuButton"
+    onclick="openMenu()">
+    ☰
+  </button>
+</header>
+
+<!-- MENU 3 GACH -->
+
+<div
+  class="menu-overlay"
+  id="menuOverlay"
+  onclick="closeMenu()">
+</div>
+
+<nav
+  class="side-menu"
+  id="sideMenu"
+  aria-label="Menu chính">
+
+  <div class="menu-heading">
+    Menu
+
+    <button
+      class="menu-close"
+      type="button"
+      aria-label="Đóng menu"
+      onclick="closeMenu()">
+      ×
+    </button>
+  </div>
+
+  <a class="menu-item" href="/">
+    TRANG CHỦ
+  </a>
+
+  <a class="menu-item" href="/#about">
+    GIỚI THIỆU
+  </a>
+
+  <a class="menu-item" href="/#goldPrice">
+    GIÁ VÀNG
+  </a>
+
+  <button
+    class="menu-item"
+    type="button"
+    id="productToggle"
+    aria-expanded="false"
+    onclick="toggleProducts()">
+    <span>SẢN PHẨM</span>
+    <span id="productPlus">＋</span>
+  </button>
+
+  <div class="product-submenu" id="productMenu">
+
+    <a class="gold-category" href="/#gold24k">
+      <strong>VÀNG 24K</strong>
+      <span>Nhẫn • Vòng • Kiềng • Lắc • Dây chuyền</span>
+    </a>
+
+    <a class="gold-category" href="/#gold750">
+      <strong>VÀNG 750</strong>
+      <span>Danh mục sản phẩm</span>
+    </a>
+
+    <a class="gold-category" href="/#gold710">
+      <strong>VÀNG 710</strong>
+      <span>Nhẫn • Vòng • Lắc • Dây chuyền</span>
+    </a>
+
+    <a class="gold-category" href="/#gold610">
+      <strong>VÀNG 610</strong>
+      <span>Nhẫn • Vòng • Lắc • Bông tai</span>
+    </a>
+
+    <a class="menu-item" href="/#products">
+      XEM TẤT CẢ SẢN PHẨM →
+    </a>
+
+  </div>
+
+  <a class="menu-item" href="/#pawn">
+    DỊCH VỤ CẦM ĐỒ
+  </a>
+
+  <a class="menu-item" href="/tin-tuc.html"
+     onclick="closeMenu()">
+    TIN TỨC & SỰ KIỆN
+  </a>
+
+  <a class="menu-item" href="/#contactPage">
+    LIÊN HỆ
+  </a>
+
+</nav>
+
+<!-- POSTER TIN TUC -->
+
+<section class="news-hero">
+
+  <img
+    id="newsPoster"
+    src="/9677C73E-A8CE-4626-A8C7-AB1D26771B4F.png"
+    alt="Tin tức và sự kiện Tiệm Vàng Tuyết Anh Phú Quốc"
+    onerror="posterFallback()">
+
+  <div class="hero-fallback" id="heroFallback">
+    <strong>TIN TỨC & SỰ KIỆN</strong>
+    <p>TIỆM VÀNG TUYẾT ANH • PHÚ QUỐC</p>
+  </div>
+
+</section>
+
+<!-- DANH SACH TIN TUC -->
+
+<main id="newsList" class="news-section">
+
+  <div class="section-eyebrow">
+    TUYẾT ANH • PHÚ QUỐC
+  </div>
+
+  <h1 class="section-title">
+    BÀI VIẾT MỚI NHẤT
+  </h1>
+
+  <div class="gold-line"></div>
+
+  <div id="articlesContainer" class="news-grid"></div>
+
+  <div id="newsEmpty" class="news-empty">
+    Các bài viết và sự kiện mới sẽ được cập nhật tại đây.
+  </div>
+
+</main>
+
+<!-- TRANG CHI TIET BAI VIET -->
+
+<article id="articleDetail" class="article-detail">
+
+  <button
+    type="button"
+    class="back-button"
+    onclick="backToNews()">
+    ← Quay lại tin tức
+  </button>
+
+  <h1 id="detailTitle"></h1>
+
+  <p id="detailDate"></p>
+
+  <img id="detailImage" alt="Ảnh bài viết" hidden>
+
+  <div id="detailBody" class="article-body"></div>
+
+</article>
+
+<!-- 4 O LIEN HE -->
+
+<section class="contact-section">
+
+  <div class="contact-inner">
+
+    <div class="section-eyebrow">
+      KẾT NỐI CÙNG TUYẾT ANH
+    </div>
+
+    <h2 class="section-title">
+      LIÊN HỆ VỚI CHÚNG TÔI
+    </h2>
+
+    <div class="gold-line"></div>
+
+    <p class="contact-description">
+      Luôn sẵn lòng tư vấn và đồng hành cùng Quý khách.
+    </p>
+
+    <div class="contact-grid">
+
+      <a
+        class="contact-card"
+        href="/#contactPage">
+        <span class="contact-icon">f</span>
+        <span>Facebook</span>
+      </a>
+
+      <a
+        class="contact-card"
+        href="/#contactPage">
+        <span class="contact-icon">♪</span>
+        <span>TikTok</span>
+      </a>
+
+      <a
+        class="contact-card"
+        href="tel:0933338661">
+        <span class="contact-icon">☎</span>
+        <span>0933 338 661</span>
+      </a>
+
+      <a
+        class="contact-card"
+        href="tel:0919301072">
+        <span class="contact-icon">☎</span>
+        <span>0919 301 072</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CHAN TRANG -->
+
+<footer class="site-footer">
+
+  <div class="footer-symbol">✦</div>
+
+  <h2 class="footer-name">
+    TIỆM VÀNG TUYẾT ANH
+  </h2>
+
+  <div class="footer-location">
+    PHÚ QUỐC
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="footer-slogan">
+    Gìn giữ giá trị – Trọn vẹn niềm tin
+  </div>
+
+  <div class="footer-year">
+    THÀNH LẬP TỪ NĂM 2007
+  </div>
+
+  <div class="footer-info">
+    331 Nguyễn Trung Trực, Dương Đông, Phú Quốc
+    <div>Thứ Hai – Thứ Bảy: 08:00 – 20:00</div>
+    <div>Chủ Nhật: 08:00 – 13:00</div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Tiệm Vàng Tuyết Anh – Phú Quốc
+  </div>
+
+</footer>
+
+<script>
+
+/* MENU */
+
+function openMenu() {
+  document.getElementById("sideMenu")
+    .classList.add("show");
+
+  document.getElementById("menuOverlay")
+    .classList.add("show");
+
+  document.body.classList.add("menu-locked");
+
+  document.getElementById("menuButton")
+    .setAttribute("aria-expanded","true");
+}
+
+function closeMenu() {
+  document.getElementById("sideMenu")
+    .classList.remove("show");
+
+  document.getElementById("menuOverlay")
+    .classList.remove("show");
+
+  document.body.classList.remove("menu-locked");
+
+  document.getElementById("menuButton")
+    .setAttribute("aria-expanded","false");
+}
+
+function toggleProducts() {
+  const submenu = document.getElementById("productMenu");
+  const button = document.getElementById("productToggle");
+  const plus = document.getElementById("productPlus");
+
+  const opened = submenu.classList.toggle("show");
+
+  button.setAttribute("aria-expanded",String(opened));
+  plus.textContent = opened ? "−" : "＋";
+}
+
+document.addEventListener("keydown",function(event) {
+  if(event.key === "Escape") {
+    closeMenu();
+  }
+});
+
+/* ANH POSTER DU PHONG */
+
+function posterFallback() {
+  const img = document.getElementById("newsPoster");
+  const fallback = document.getElementById("heroFallback");
+
+  img.style.display = "none";
+  fallback.style.display = "flex";
+}
+
+/*
+  DANH SACH BAI VIET
+
+  Khi chua dang tin:
+  De mang articles trong.
+
+  Khi dang tin:
+  Them du lieu theo mau ben duoi.
+
+  {
+    title: "Tieu de bai viet",
+    date: "27/10/2026",
+    image: "/ten-anh.jpg",
+    summary: "Mo ta ngan",
+    content: "Noi dung bai viet"
+  }
+*/
+
+const articles = [];
+
+/* HIEN THI TIN TUC */
+
+function renderArticles() {
+  const container =
+    document.getElementById("articlesContainer");
+
+  const empty =
+    document.getElementById("newsEmpty");
+
+  container.innerHTML = "";
+
+  if(articles.length === 0) {
+    empty.style.display = "block";
+    return;
+  }
+
+  empty.style.display = "none";
+
+  const sorted = articles
+    .map((article,index) => ({...article,index}))
+    .sort((a,b) => {
+      const parse = date => {
+        const parts = date.split("/");
+        if(parts.length !== 3) return 0;
+        return new Date(
+          Number(parts[2]),
+          Number(parts[1])-1,
+          Number(parts[0])
+        ).getTime();
+      };
+      return parse(b.date)-parse(a.date);
+    });
+
+  sorted.forEach((article,position) => {
+    const card = document.createElement("article");
+
+    card.className =
+      "news-card" + (position === 0 ? " featured" : "");
+
+    card.tabIndex = 0;
+    card.setAttribute("role","button");
+
+    if(article.image) {
+      const img = document.createElement("img");
+      img.src = article.image;
+      img.alt = article.title || "Ảnh tin tức";
+      img.loading = "lazy";
+      img.onerror = function() {
+        this.style.display = "none";
+      };
+      card.appendChild(img);
+    }
+
+    const content = document.createElement("div");
+    content.className = "news-card-content";
+
+    const time = document.createElement("time");
+    time.textContent = article.date || "";
+
+    const title = document.createElement("h3");
+    title.textContent = article.title || "";
+
+    const summary = document.createElement("p");
+    summary.textContent = article.summary || "";
+
+    const readMore = document.createElement("span");
+    readMore.className = "read-more";
+    readMore.textContent = "XEM CHI TIẾT →";
+
+    content.append(time,title,summary,readMore);
+    card.appendChild(content);
+
+    card.addEventListener("click",() => {
+      openArticle(article.index);
+    });
+
+    card.addEventListener("keydown",event => {
+      if(event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openArticle(article.index);
+      }
+    });
+
+    container.appendChild(card);
+  });
+}
+
+/* MO BAI VIET */
+
+function openArticle(index) {
+  const article = articles[index];
+
+  if(!article) return;
+
+  document.getElementById("newsList")
+    .style.display = "none";
+
+  document.getElementById("articleDetail")
+    .style.display = "block";
+
+  document.getElementById("detailTitle")
+    .textContent = article.title || "";
+
+  document.getElementById("detailDate")
+    .textContent = article.date || "";
+
+  document.getElementById("detailBody")
+    .textContent = article.content || "";
+
+  const img = document.getElementById("detailImage");
+
+  if(article.image) {
+    img.src = article.image;
+    img.hidden = false;
+    img.onerror = function() {
+      this.hidden = true;
+    };
+  } else {
+    img.hidden = true;
+    img.removeAttribute("src");
+  }
+
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* QUAY LAI DANH SACH */
+
+function backToNews() {
+  document.getElementById("articleDetail")
+    .style.display = "none";
+
+  document.getElementById("newsList")
+    .style.display = "block";
+
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* KHOI DONG */
+
+renderArticles();
+
+</script>
+
+</body>
+</html>
