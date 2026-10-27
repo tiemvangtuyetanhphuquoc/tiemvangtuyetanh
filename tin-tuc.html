@@ -338,18 +338,37 @@ footer p {
 
 <body>
 
+
 <!-- THANH MENU -->
 <header>
   <a href="/" class="brand">TUYẾT ANH • PHÚ QUỐC</a>
-  <button class="menu-button" id="menuButton"
-    aria-label="Mở menu" aria-expanded="false"
-    onclick="toggleMenu()">☰</button>
 
-  <nav id="menu">
-    <a href="/">Trang chủ</a>
-    <a href="/tin-tuc.html">Tin tức & Sự kiện</a>
-  </nav>
+  <button class="menu-button" id="menuButton"
+    type="button"
+    aria-label="Mở menu"
+    aria-expanded="false"
+    onclick="openNewsMenu()">☰</button>
 </header>
+
+<!-- MENU TRƯỢT BÊN TRÁI -->
+<div class="news-menu-overlay" id="newsMenuOverlay"
+     onclick="closeNewsMenu()"></div>
+
+<nav class="news-side-menu" id="newsSideMenu">
+  <div class="news-menu-heading">
+    <span>Menu</span>
+    <button type="button" onclick="closeNewsMenu()">×</button>
+  </div>
+
+  <a href="/">TRANG CHỦ</a>
+  <a href="/#gioi-thieu">GIỚI THIỆU</a>
+  <a href="/#gia-vang">GIÁ VÀNG</a>
+  <a href="/#san-pham">SẢN PHẨM</a>
+  <a href="/#cam-do">DỊCH VỤ CẦM ĐỒ</a>
+  <a href="/tin-tuc.html">TIN TỨC & SỰ KIỆN</a>
+  <a href="/#lien-he">LIÊN HỆ</a>
+</nav>
+
 
 <!-- POSTER ĐỎ ĐÔ CỦA BẠN -->
 <section class="hero">
