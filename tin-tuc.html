@@ -575,6 +575,63 @@ body.menu-locked {
   }
 }
 
+/* SLIDESHOW ANH BAI VIET */
+
+.article-slider {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  margin: 25px 0 30px;
+}
+
+.article-slider[hidden] {
+  display: none;
+}
+
+.article-slides {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.article-slides img {
+  flex: 0 0 100%;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #f5efe4;
+  scroll-snap-align: start;
+  border-radius: 0;
+}
+
+.article-dots {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  padding: 15px 0;
+}
+
+.article-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d9c9b3;
+  transition: .3s;
+}
+
+.article-dots span.active {
+  width: 22px;
+  border-radius: 10px;
+  background: #780d1b;
+}
+
 </style>
 </head>
 
@@ -739,7 +796,12 @@ body.menu-locked {
 
   <p id="detailDate"></p>
 
-  <img id="detailImage" alt="Ảnh bài viết" hidden>
+
+<div id="articleSlider" class="article-slider" hidden>
+  <div id="articleSlides" class="article-slides"></div>
+  <div id="articleDots" class="article-dots"></div>
+</div>
+
 
   <div id="detailBody" class="article-body"></div>
 
@@ -1059,63 +1121,86 @@ function renderArticles() {
 
 /* MO BAI VIET */
 
+let articleSlideTimer = null;
+
 function openArticle(index) {
   const article = articles[index];
+  if (!article) return;
 
-  if(!article) return;
+  document.getElementById("newsList").style.display = "none";
+  document.getElementById("articleDetail").style.display = "block";
 
-  document.getElementById("newsList")
-    .style.display = "none";
+  document.getElementById("detailTitle").textContent = article.title || "";
+  document.getElementById("detailDate").textContent = article.date || "";
+  document.getElementById("detailBody").textContent = article.content || "";
 
-  document.getElementById("articleDetail")
-    .style.display = "block";
+  const slider = document.getElementById("articleSlider");
+  const slides = document.getElementById("articleSlides");
+  const dots = document.getElementById("articleDots");
 
-  document.getElementById("detailTitle")
-    .textContent = article.title || "";
+  slides.innerHTML = "";
+  dots.innerHTML = "";
 
-  document.getElementById("detailDate")
-    .textContent = article.date || "";
-
-  
-const detailBody = document.getElementById("detailBody");
-
-detailBody.textContent = article.content || "";
-
-if (article.images && article.images.length > 1) {
-  article.images.slice(1).forEach(function(src) {
-    const photo = document.createElement("img");
-    photo.src = src;
-    photo.alt = "Hình ảnh chương trình tri ân 20/10";
-    photo.loading = "lazy";
-    photo.style.display = "block";
-    photo.style.width = "100%";
-    photo.style.height = "auto";
-    photo.style.marginTop = "25px";
-    photo.style.borderRadius = "12px";
-    detailBody.appendChild(photo);
-  });
-}
-
-
-  const img = document.getElementById("detailImage");
-
-  if(article.image) {
-    img.src = article.image;
-    img.hidden = false;
-    img.onerror = function() {
-      this.hidden = true;
-    };
-  } else {
-    img.hidden = true;
-    img.removeAttribute("src");
+  if (articleSlideTimer) {
+    clearInterval(articleSlideTimer);
+    articleSlideTimer = null;
   }
 
-  window.scrollTo({top:0,behavior:"smooth"});
+  const images = article.images && article.images.length
+    ? article.images
+    : article.image ? [article.image] : [];
+
+  slider.hidden = images.length === 0;
+
+  images.forEach((src, i) => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = "Hình ảnh bài viết " + (i + 1);
+    img.loading = "lazy";
+    slides.appendChild(img);
+
+    const dot = document.createElement("span");
+    if (i === 0) dot.classList.add("active");
+    dots.appendChild(dot);
+  });
+
+  let currentSlide = 0;
+
+  function goToSlide(i) {
+    currentSlide = i;
+    slides.scrollTo({
+      left: slides.clientWidth * i,
+      behavior: "smooth"
+    });
+    [...dots.children].forEach((dot, j) => {
+      dot.classList.toggle("active", i === j);
+    });
+  }
+
+  slides.onscroll = function() {
+    if (!slides.clientWidth) return;
+    currentSlide = Math.round(slides.scrollLeft / slides.clientWidth);
+    [...dots.children].forEach((dot, j) => {
+      dot.classList.toggle("active", j === currentSlide);
+    });
+  };
+
+  if (images.length > 1) {
+    articleSlideTimer = setInterval(() => {
+      goToSlide((currentSlide + 1) % images.length);
+    }, 4000);
+  }
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
 
 /* QUAY LAI DANH SACH */
 
-function backToNews() {
+function backToNews() { if (articleSlideTimer) {
+  clearInterval(articleSlideTimer);
+  articleSlideTimer = null;
+}
   document.getElementById("articleDetail")
     .style.display = "none";
 
