@@ -1076,8 +1076,26 @@ function openArticle(index) {
   document.getElementById("detailDate")
     .textContent = article.date || "";
 
-  document.getElementById("detailBody")
-    .textContent = article.content || "";
+  
+const detailBody = document.getElementById("detailBody");
+
+detailBody.textContent = article.content || "";
+
+if (article.images && article.images.length > 1) {
+  article.images.slice(1).forEach(function(src) {
+    const photo = document.createElement("img");
+    photo.src = src;
+    photo.alt = "Hình ảnh chương trình tri ân 20/10";
+    photo.loading = "lazy";
+    photo.style.display = "block";
+    photo.style.width = "100%";
+    photo.style.height = "auto";
+    photo.style.marginTop = "25px";
+    photo.style.borderRadius = "12px";
+    detailBody.appendChild(photo);
+  });
+}
+
 
   const img = document.getElementById("detailImage");
 
