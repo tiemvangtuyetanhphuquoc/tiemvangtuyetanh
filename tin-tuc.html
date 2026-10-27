@@ -354,7 +354,7 @@ footer p {
 <!-- POSTER ĐỎ ĐÔ CỦA BẠN -->
 <section class="hero">
   <img
-    src="/9677C73F-A8CE-4626-A8C7-AB1D26771B4F.png"
+    src="/9677C73E-A8CE-4626-A8C7-AB1D26771B4F.png"
     alt="Tin tức và sự kiện Tiệm Vàng Tuyết Anh Phú Quốc">
 </section>
 
@@ -444,47 +444,14 @@ function toggleMenu() {
   Các bài cũ tự chuyển xuống danh sách nhỏ.
 */
 
-const articles = [
-  {
-    date: "2026-10-20",
-    title: "Mua vàng sang – Nhận túi xinh dịp 20/10",
-    image: "/qua-tang-20-10.jpg",
-    description:
-      "Chương trình quà tặng tri ân khách hàng nhân ngày Phụ nữ Việt Nam 20/10.",
 
-    content: `
-      <p>
-        Nhân dịp ngày Phụ nữ Việt Nam 20/10,
-        Tiệm Vàng Tuyết Anh – Phú Quốc gửi đến
-        Quý khách chương trình quà tặng với
-        thông điệp:
-      </p>
+/* DANH SÁCH TIN TỨC & SỰ KIỆN */
 
-      <p>
-        <strong>
-          MUA VÀNG SANG – NHẬN TÚI XINH
-        </strong>
-      </p>
+/* Khi có chương trình mới,
+   chúng ta sẽ thêm bài viết tại đây. */
 
-      <p>
-        Đây là món quà nhỏ thay lời cảm ơn
-        đến Quý khách đã luôn tin tưởng và
-        đồng hành cùng Tiệm Vàng Tuyết Anh.
-      </p>
+const articles = [];
 
-      <p>
-        <strong>Địa điểm:</strong>
-        331 Nguyễn Trung Trực,
-        Dương Đông, Phú Quốc.
-      </p>
-
-      <p>
-        <strong>Trạng thái:</strong>
-        Chương trình đã kết thúc.
-      </p>
-    `
-  }
-];
 
 /* SẮP XẾP THEO NGÀY MỚI NHẤT */
 articles.sort((a, b) => b.date.localeCompare(a.date));
