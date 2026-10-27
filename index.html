@@ -1482,6 +1482,123 @@ footer{
 }
 
 
+/* ===== TRANG CHU TUYET ANH SANG TRONG ===== */
+
+.ta-luxury-hero {
+  max-width: 100%;
+  padding: 30px 0 0;
+  text-align: center;
+  overflow: hidden;
+  background: #fffdf9;
+}
+
+.ta-luxury-hero .year {
+  color: #b18b4b;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin: 0 15px 12px;
+}
+
+.ta-luxury-hero h1 {
+  font-family: Georgia, serif;
+  color: #78131b;
+  font-size: clamp(27px, 5vw, 44px);
+  line-height: 1.2;
+  padding: 0 12px;
+}
+
+.ta-luxury-hero h2 {
+  font-family: Georgia, serif;
+  color: #b99755;
+  font-size: 26px;
+  margin: 8px 0 12px;
+}
+
+.ta-luxury-hero p {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0 22px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #655b55;
+}
+
+.ta-hero-jewelry {
+  width: 100%;
+  max-width: 850px;
+  margin: -4px auto 0;
+  overflow: hidden;
+}
+
+.ta-hero-jewelry img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.ta-luxury-hero .hero-actions {
+  max-width: 850px;
+  margin: -5px auto 0;
+  padding: 0 18px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.ta-luxury-hero .hero-btn {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.4;
+  box-shadow: 0 4px 12px rgba(70,20,20,.07);
+}
+
+.ta-luxury-hero .hero-btn-primary {
+  background: #850d1b;
+  border: 1px solid #c6a15b;
+  color: white;
+}
+
+.ta-luxury-hero .hero-btn-secondary {
+  background: #fffdf9;
+  border: 1px solid #c6a15b;
+  color: #78131b;
+}
+
+@media (max-width: 650px) {
+  .ta-luxury-hero {
+    padding-top: 27px;
+  }
+
+  .ta-luxury-hero h1 {
+    font-size: clamp(25px, 6.7vw, 35px);
+  }
+
+  .ta-luxury-hero h2 {
+    font-size: 23px;
+  }
+
+  .ta-luxury-hero p {
+    font-size: 14px;
+  }
+
+  .ta-luxury-hero .hero-actions {
+    gap: 9px;
+    padding: 0 14px 22px;
+  }
+
+  .ta-luxury-hero .hero-btn {
+    font-size: 12px;
+    padding: 10px 6px;
+  }
+}
+
 </style>
   <script type="application/ld+json">
 
@@ -1646,35 +1763,47 @@ footer{
   </div>
 
 </div>
-<section class="hero">
+
+
+<section class="hero ta-luxury-hero">
 
   <div class="year">
     THÀNH LẬP TỪ NĂM 2007
   </div>
 
-  <h1>
-    TIỆM VÀNG TUYẾT ANH
-  </h1>
+  <h1>TIỆM VÀNG TUYẾT ANH</h1>
 
   <h2>PHÚ QUỐC</h2>
 
   <p>
     Gìn giữ giá trị – Trọn vẹn niềm tin.
-    Đa dạng các dòng vàng 24K, 750, 710 và 610
+    Đa dạng các dòng vàng 24K, 710 và 610
     cùng nhiều sản phẩm và dịch vụ trang sức tại Phú Quốc.
   </p>
 
+  <!-- HINH TRANG SUC NOI BAT -->
+  <div class="ta-hero-jewelry">
+    <img
+      src="DAC550F9-5C3D-4301-A9F0-084EFBC858C7.png"
+      alt="Dây chuyền và trang sức vàng Tiệm Vàng Tuyết Anh Phú Quốc"
+      loading="eager"
+      decoding="async">
+  </div>
+
+  <!-- HAI NUT CHUC NANG -->
   <div class="hero-actions">
 
-    <span class="hero-btn hero-btn-primary"
-          onclick="showPage('products')">
-      XEM SẢN PHẨM
-    </span>
+    <button class="hero-btn hero-btn-primary"
+            type="button"
+            onclick="showPage('products')">
+      XEM SẢN PHẨM →
+    </button>
 
-    <span class="hero-btn hero-btn-secondary"
-          onclick="showPage('about')">
-      KHÁM PHÁ TUYẾT ANH
-    </span>
+    <button class="hero-btn hero-btn-secondary"
+            type="button"
+            onclick="showPage('about')">
+      KHÁM PHÁ TUYẾT ANH →
+    </button>
 
   </div>
 
