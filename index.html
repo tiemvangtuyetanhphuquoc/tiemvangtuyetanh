@@ -5097,6 +5097,30 @@ footer.royal-footer {
 }
 </style>
 <!-- KET THUC GIAO DIEN HOANG GIA - PHAN 1 -->
+<script>
+function openPageFromLink() {
+  const pageId = window.location.hash.substring(1);
 
+  const allowedPages = [
+    "home",
+    "about",
+    "goldPrice",
+    "gold24k",
+    "gold750",
+    "gold710",
+    "gold610",
+    "products",
+    "pawn",
+    "contactPage"
+  ];
+
+  if (allowedPages.includes(pageId)) {
+    showPage(pageId);
+  }
+}
+
+window.addEventListener("load", openPageFromLink);
+window.addEventListener("hashchange", openPageFromLink);
+</script>
 </body>
 </html>
