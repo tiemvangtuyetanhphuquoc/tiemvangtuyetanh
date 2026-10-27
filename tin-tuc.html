@@ -601,14 +601,21 @@ body.menu-locked {
   display: none;
 }
 
+
 .article-slides img {
   flex: 0 0 100%;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
-  background: #f5efe4;
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
   scroll-snap-align: start;
-  border-radius: 0;
+  border-radius: 12px;
+}
+
+@media (min-width: 768px) {
+  .article-slides img {
+    height: 550px;
+  }
 }
 
 .article-dots {
