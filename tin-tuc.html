@@ -639,6 +639,43 @@ body.menu-locked {
   background: #780d1b;
 }
 
+/* NUT MESSENGER NOI */
+
+.messenger-float {
+  position: fixed;
+  right: 20px;
+  bottom: 85px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #780d1b;
+  border: 3px solid #c9a35d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+  z-index: 1000;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.messenger-float:hover {
+  transform: scale(1.08);
+}
+
+.messenger-float svg {
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+
+@media (max-width: 767px) {
+  .messenger-float {
+    right: 16px;
+    bottom: 85px;
+  }
+}
+
 </style>
 </head>
 
@@ -1222,6 +1259,23 @@ function backToNews() { if (articleSlideTimer) {
 renderArticles();
 
 </script>
+
+<!-- NUT MESSENGER NOI -->
+<a
+  href="https://m.me/tiemvangtuyetanhphuquoc"
+  class="messenger-float"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Nhắn tin Messenger Tiệm Vàng Tuyết Anh"
+  title="Nhắn tin với Tuyết Anh">
+
+  <svg viewBox="0 0 24 24"
+       xmlns="http://www.w3.org/2000/svg"
+       aria-hidden="true">
+    <path d="M12 2C6.477 2 2 6.145 2 11.259c0 2.91 1.45 5.506 3.717 7.203V22l3.397-1.864c.91.25 1.88.382 2.886.382 5.523 0 10-4.145 10-9.259S17.523 2 12 2zm1.014 12.47-2.547-2.72-4.973 2.72 5.47-5.805 2.61 2.72 4.91-2.72-5.47 5.805z"/>
+  </svg>
+
+</a>
 
 </body>
 </html>
