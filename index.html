@@ -5108,19 +5108,14 @@ footer.royal-footer {
 </style>
 <!-- KET THUC GIAO DIEN HOANG GIA - PHAN 1 -->
 <script>
+
 function openPageFromLink() {
-  const pageId = window.location.hash.substring(1);
+  const pageId = window.location.hash.slice(1);
 
   const allowedPages = [
-    "home",
-    "about",
-    "goldPrice",
-    "gold24k",
-    "gold750",
-    "gold710",
-    "gold610",
-    "products",
-    "pawn",
+    "home", "about", "goldPrice",
+    "gold24k", "gold750", "gold710",
+    "gold610", "products", "pawn",
     "contactPage"
   ];
 
@@ -5129,8 +5124,15 @@ function openPageFromLink() {
   }
 }
 
-window.addEventListener("load", openPageFromLink);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", openPageFromLink);
+} else {
+  openPageFromLink();
+}
+
+window.addEventListener("pageshow", openPageFromLink);
 window.addEventListener("hashchange", openPageFromLink);
+
 </script>
 </body>
 </html>
